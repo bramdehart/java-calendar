@@ -1,6 +1,5 @@
-/**
- * Created by Bram on 06/10/2016.
- */
+package calendar.domain;
+
 public class Calendar {
     private java.util.Calendar calendar;
 }

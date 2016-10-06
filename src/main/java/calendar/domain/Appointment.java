@@ -1,8 +1,6 @@
+package calendar.domain;
 import java.util.Date;
 
-/**
- * Created by Bram on 06/10/2016.
- */
 public class Appointment {
     private String title;
     private String description;
