@@ -5,5 +5,5 @@ package edu.avans.library.presentation;
 /**
  * Created by Bram on 13/10/2016.
  */
-public class MonthView {
+public class CalendarUI {
 }
