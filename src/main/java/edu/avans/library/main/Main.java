@@ -1,8 +1,8 @@
 package edu.avans.library.main;
-import edu.avans.library.presentation.MainPanel;
+import edu.avans.library.presentation.MainFrame;
 
 public class Main {
     public static void main(String[] args) {
-        MainPanel panel = new MainPanel();
+        MainFrame panel = new MainFrame();
     }
 }
