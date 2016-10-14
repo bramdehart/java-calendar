@@ -1,27 +1,45 @@
 package edu.avans.library.presentation;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentAdapter;
 
 public class MainPanel extends JPanel {
-
-//    private static JPanel panel;
-//    private static JButton prevMonth;
-//    private static JButton nextMonth;
-//    private static JComboBox yearPicker;
-//    private static JComboBox monthPicker;
-//    private static JComboBox dayPicker;
+    private Integer sidebarWidth = 175;
+    private Integer sidebarHeight = MainFrame.frameHeight;
+    private Integer topbarWidth = MainFrame.frameWidth - sidebarWidth;
+    private Integer topbarHeight = 75;
+    private static Button prevMonth, nextMonth, currentDay;
 
     public MainPanel() {
-        //setBackground(Color.WHITE);
+        setLayout(null);
+        // Listens on resize
+        addComponentListener(new resizeListener());
+        // Draw UI bars
+        drawSidebar();
+        drawTopbar();
     }
 
-    public void drawSideBar() {
+    public void drawSidebar() {
     }
 
-    public void drawTopBar() {
+    public void drawTopbar() {
+        prevMonth = new Button("<");
+        currentDay = new Button("Today");
+        nextMonth = new Button(">");
+
+
+        placeTopbarButtons();
+
+        add(prevMonth);
+        add(currentDay);
+        add(nextMonth);
+    }
+
+    public void placeTopbarButtons() {
+        prevMonth.setBounds(MainFrame.frameWidth -250, 20, 30, 30);
+        currentDay.setBounds(MainFrame.frameWidth -200, 20, 130, 30);
+        nextMonth.setBounds(MainFrame.frameWidth -50, 20, 30, 30);
     }
 
     public void drawCalendar() {
@@ -29,12 +47,17 @@ public class MainPanel extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.setColor(Color.BLUE);
+        g.fillRect(0, 0, sidebarWidth, sidebarHeight);
+        g.setColor(Color.GREEN);
+        g.fillRect(sidebarWidth, 0, topbarWidth, topbarHeight);
     }
 
-//    // Inwendige klasse
-//    class KnopHandler implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//            repaint();
-//        }
-//    }
+    class resizeListener extends ComponentAdapter {
+        public void componentResized(ComponentEvent e) {
+            MainFrame.setFrameDimension();
+            placeTopbarButtons();
+            //repaint();
+        }
+    }
 }
