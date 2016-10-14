@@ -5,59 +5,83 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 
 public class MainPanel extends JPanel {
-    private Integer sidebarWidth = 175;
-    private Integer sidebarHeight = MainFrame.frameHeight;
-    private Integer topbarWidth = MainFrame.frameWidth - sidebarWidth;
-    private Integer topbarHeight = 75;
-    private static Button prevMonth, nextMonth, currentDay;
+    public static Integer sidePanelWidth, topPanelHeight;
+    private static Integer sidePanelHeight, topPanelWidth;
+    private static Button prevMonthButton, nextMonthButton, currentDayButton;
+    public static JPanel sidePanel, topPanel;
+    public static CalendarPanel calendarPanel;
 
     public MainPanel() {
+        // initialise dimensions
+        sidePanelWidth = 175;
+        sidePanelHeight = MainFrame.frameHeight;
+        topPanelWidth = MainFrame.frameWidth - sidePanelWidth;
+        topPanelHeight = 75;
+
         setLayout(null);
-        // Listens on resize
+        // listen on resize
         addComponentListener(new resizeListener());
-        // Draw UI bars
-        drawSidebar();
-        drawTopbar();
+        // draw panels
+        drawPanels();
     }
 
-    public void drawSidebar() {
+    public void drawPanels() {
+        drawSidePanel();
+        drawTopPanel();
+        drawCalendarPanel();
     }
 
-    public void drawTopbar() {
-        prevMonth = new Button("<");
-        currentDay = new Button("Today");
-        nextMonth = new Button(">");
+    public void drawSidePanel() {
+        sidePanel = new JPanel();
 
-
-        placeTopbarButtons();
-
-        add(prevMonth);
-        add(currentDay);
-        add(nextMonth);
+        // add components
+        sidePanel.setBackground(Color.BLUE);
+        sidePanel.setBounds(0, 0, sidePanelWidth, sidePanelHeight);
+        add(sidePanel);
     }
 
-    public void placeTopbarButtons() {
-        prevMonth.setBounds(MainFrame.frameWidth -250, 20, 30, 30);
-        currentDay.setBounds(MainFrame.frameWidth -200, 20, 130, 30);
-        nextMonth.setBounds(MainFrame.frameWidth -50, 20, 30, 30);
+    public void drawTopPanel() {
+        topPanel = new JPanel();
+
+        // buttons
+        prevMonthButton = new Button("<");
+        currentDayButton = new Button("Today");
+        nextMonthButton = new Button(">");
+
+        // add components
+        topPanel.add(prevMonthButton);
+        topPanel.add(currentDayButton);
+        topPanel.add(nextMonthButton);
+        topPanel.setBackground(Color.PINK);
+        topPanel.setBounds(sidePanelWidth, 0, topPanelWidth, topPanelHeight);
+        add(topPanel);
     }
 
-    public void drawCalendar() {
+    private void resizePanels() {
+        resizeSidePanel();
+        resizeTopPanel();
+        calendarPanel.resizeCalendarPanel();
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.BLUE);
-        g.fillRect(0, 0, sidebarWidth, sidebarHeight);
-        g.setColor(Color.GREEN);
-        g.fillRect(sidebarWidth, 0, topbarWidth, topbarHeight);
+    private void resizeSidePanel() {
+        sidePanelHeight = MainFrame.frameHeight;
+        sidePanel.setBounds(0, 0, sidePanelWidth, sidePanelHeight);
+    }
+
+    private void resizeTopPanel() {
+        topPanelWidth = MainFrame.frameWidth - sidePanelWidth;
+        topPanel.setBounds(sidePanelWidth, 0, topPanelWidth, topPanelHeight);
+    }
+
+    public void drawCalendarPanel() {
+        calendarPanel = new CalendarPanel();
+        add(calendarPanel);
     }
 
     class resizeListener extends ComponentAdapter {
         public void componentResized(ComponentEvent e) {
             MainFrame.setFrameDimension();
-            placeTopbarButtons();
-            //repaint();
+            resizePanels();
         }
     }
 }

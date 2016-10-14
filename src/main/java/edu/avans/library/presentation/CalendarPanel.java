@@ -5,18 +5,41 @@ import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 
-// month grid + appointments
-
-/**
- * Created by Bram on 13/10/2016.
- */
 public class CalendarPanel extends JPanel {
-    public CalendarPanel() {
+    public static Integer dayBlockCount = 42;
+    public static Integer calendarPanelWidth, calendarPanelHeight;
+    private static DayPanel dayPanel;
 
+    public CalendarPanel() {
+        // initialise dimensions
+        calendarPanelWidth = MainFrame.frameWidth - MainPanel.sidePanelWidth;
+        calendarPanelHeight = MainFrame.frameHeight - MainPanel.topPanelHeight;
+        initCalendarPanel();
     }
 
-    public void drawDayBlocks() {
+    public void initCalendarPanel() {
+        // init calendar panel
+        setLayout(null);
+        setBackground(Color.GREEN);
+        setBorder(BorderFactory.createLineBorder(Color.RED));
+        setBounds(MainPanel.sidePanelWidth, MainPanel.topPanelHeight, calendarPanelWidth, calendarPanelHeight);
 
+        for (int d=0; d<dayBlockCount; d++) {
+            drawDayPanel(d);
+        }
+    }
+
+    public void resizeCalendarPanel() {
+        calendarPanelWidth = MainFrame.frameWidth - MainPanel.sidePanelWidth;
+        calendarPanelHeight = MainFrame.frameHeight - MainPanel.topPanelHeight;
+        setBounds(MainPanel.sidePanelWidth, MainPanel.topPanelHeight, calendarPanelWidth, calendarPanelHeight);
+    }
+
+    /**
+     *
+     * @param d (dag block)
+     */
+    public void drawDayPanel(Integer d) {
     }
 
     public void drawMonth(Date date) {
