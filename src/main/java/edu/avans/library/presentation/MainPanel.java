@@ -5,55 +5,54 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 
 public class MainPanel extends JPanel {
-    public static Integer sidePanelWidth, topPanelHeight;
-    private static Integer sidePanelHeight, topPanelWidth;
-    private static Button prevMonthButton, nextMonthButton, currentDayButton;
-    public static JPanel sidePanel, topPanel;
-    public static CalendarPanel calendarPanel;
+    private static Integer SIDE_PANEL_WIDTH = 175;
+    private static Integer TOP_PANEL_HEIGHT = 75;
+    private Integer sidePanelHeight, topPanelWidth;
+    private JButton prevMonthButton, nextMonthButton, currentDayButton;
+    private JPanel sidePanel, topPanel; // for now private
+    private CalendarPanel calendarPanel; // for now private
+    public MainFrame mainFrame;
 
-    public MainPanel() {
-        // initialise dimensions
-        sidePanelWidth = 175;
-        sidePanelHeight = MainFrame.frameHeight;
-        topPanelWidth = MainFrame.frameWidth - sidePanelWidth;
-        topPanelHeight = 75;
+    // TODO: adding month + weekday headings to toppanel
 
+    public MainPanel(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
+        sidePanelHeight = mainFrame.getMainFrameHeight();
+        topPanelWidth = mainFrame.getMainFrameWidth() - SIDE_PANEL_WIDTH;
         setLayout(null);
-        // listen on resize
         addComponentListener(new resizeListener());
-        // draw panels
         drawPanels();
     }
 
-    public void drawPanels() {
+    private void drawPanels() {
         drawSidePanel();
         drawTopPanel();
         drawCalendarPanel();
     }
 
-    public void drawSidePanel() {
+    private void drawSidePanel() {
         sidePanel = new JPanel();
-
         // add components
         sidePanel.setBackground(Color.BLUE);
-        sidePanel.setBounds(0, 0, sidePanelWidth, sidePanelHeight);
+        setSidePanelBounds();
         add(sidePanel);
     }
 
-    public void drawTopPanel() {
+    private void drawTopPanel() {
         topPanel = new JPanel();
 
         // buttons
-        prevMonthButton = new Button("<");
-        currentDayButton = new Button("Today");
-        nextMonthButton = new Button(">");
+        prevMonthButton = new JButton("<");
+        currentDayButton = new JButton("Today");
+        nextMonthButton = new JButton(">");
 
         // add components
         topPanel.add(prevMonthButton);
         topPanel.add(currentDayButton);
         topPanel.add(nextMonthButton);
+        // TODO: top panel add heading + days
         topPanel.setBackground(Color.PINK);
-        topPanel.setBounds(sidePanelWidth, 0, topPanelWidth, topPanelHeight);
+        setTopPanelBounds();
         add(topPanel);
     }
 
@@ -61,26 +60,51 @@ public class MainPanel extends JPanel {
         resizeSidePanel();
         resizeTopPanel();
         calendarPanel.resizeCalendarPanel();
+        // TODO: resize month + daypanels
     }
 
     private void resizeSidePanel() {
-        sidePanelHeight = MainFrame.frameHeight;
-        sidePanel.setBounds(0, 0, sidePanelWidth, sidePanelHeight);
+        sidePanelHeight = mainFrame.getMainFrameHeight();
+        setSidePanelBounds();
     }
 
     private void resizeTopPanel() {
-        topPanelWidth = MainFrame.frameWidth - sidePanelWidth;
-        topPanel.setBounds(sidePanelWidth, 0, topPanelWidth, topPanelHeight);
+        topPanelWidth = mainFrame.getMainFrameWidth() - SIDE_PANEL_WIDTH;
+        setTopPanelBounds();
     }
 
-    public void drawCalendarPanel() {
-        calendarPanel = new CalendarPanel();
+    private void drawCalendarPanel() {
+        calendarPanel = new CalendarPanel(MainPanel.this);
         add(calendarPanel);
+    }
+
+    public Integer getTopPanelWidth() {
+        return topPanelWidth;
+    }
+
+    public Integer getTopPanelHeight() {
+        return TOP_PANEL_HEIGHT;
+    }
+
+    public Integer getSidePanelWidth() {
+        return SIDE_PANEL_WIDTH;
+    }
+
+    public Integer getSidePanelHeight() {
+        return sidePanelHeight;
+    }
+
+    private void setSidePanelBounds() {
+        sidePanel.setBounds(0, 0, SIDE_PANEL_WIDTH, sidePanelHeight);
+    }
+
+    private void setTopPanelBounds() {
+        topPanel.setBounds(SIDE_PANEL_WIDTH, 0, topPanelWidth, TOP_PANEL_HEIGHT);
     }
 
     class resizeListener extends ComponentAdapter {
         public void componentResized(ComponentEvent e) {
-            MainFrame.setFrameDimension();
+            mainFrame.setFrameDimension(true);
             resizePanels();
         }
     }

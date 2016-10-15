@@ -1,16 +1,16 @@
 package edu.avans.library.presentation;
+import java.util.Date;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentAdapter;
 
 public class DayPanel extends JPanel {
-    private static Integer dayPanelWidth, dayPanelHeight;
-
-    public DayPanel() {
-        // initialise dimensions
-        dayPanelWidth = CalendarPanel.calendarPanelWidth / 7;
-        dayPanelHeight = CalendarPanel.calendarPanelHeight / 6;;
-        setLayout(null);
-    }
+//    private static Integer dayPanelWidth = MonthPanel.MONT_PANEL_WIDTH / 7;
+//    private static Integer dayPanelHeight = MonthPanel.MONTH_PANEL_HEIGHT / 6;
+//
+//    public DayPanel() {
+//        setLayout(null);
+//        // hier een foreach
+//    }
+//
+//    // hier iets initen
 }

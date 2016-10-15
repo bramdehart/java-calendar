@@ -3,40 +3,48 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-
-    private static JFrame frame;
-    public static Integer screenWidth, screenHeight, frameWidth, frameHeight;
-    public static MainPanel mainPanel;
+    private JFrame mainFrame;
+    public Integer frameWidth, frameHeight;
+    private MainPanel mainPanel; // for now private
 
     public MainFrame() {
         initFrame();
     }
 
-    public static void initFrame(){
-        frame = new JFrame("Calendar");
-        setScreenDimension();
-        frame.setSize(screenWidth,screenHeight);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setMinimumSize(new Dimension(900, 500));
+    private void initFrame(){
+        mainFrame = new JFrame("Calendar");
+        setFrameDimension(false);
+
+        mainFrame.setSize(frameWidth,frameHeight);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setMinimumSize(new Dimension(900, 500));
 
         // add content to frame
-        mainPanel = new MainPanel();
-        frame.setContentPane(mainPanel);
-        frame.setVisible(true);
+        mainPanel = new MainPanel(MainFrame.this);
+        mainFrame.setContentPane(mainPanel);
+        mainFrame.setVisible(true);
     }
 
-    public static void setScreenDimension() {
-        //get current screendimensions
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        screenWidth = (int) screenSize.getWidth();
-        screenHeight = (int) screenSize.getHeight();
-        frameWidth = screenWidth;
-        frameHeight = screenHeight;
+    public Integer getMainFrameHeight() {
+        return frameHeight;
     }
 
-    public static void setFrameDimension() {
-        // get current frame dimensions
-        frameWidth = frame.getWidth();
-        frameHeight = frame.getHeight();
+    public Integer getMainFrameWidth() {
+        return frameWidth;
+    }
+
+    public void setFrameDimension(boolean resized) {
+        if (resized) {
+            // window is being resized
+            Dimension windowSize = mainFrame.getBounds().getSize();
+            frameWidth = (int) windowSize.getWidth();
+            frameHeight = (int) windowSize.getHeight();
+        }
+        else {
+            // first time startup
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            frameWidth = (int) screenSize.getWidth();
+            frameHeight = (int) screenSize.getHeight();
+        }
     }
 }
