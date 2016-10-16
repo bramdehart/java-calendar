@@ -1,4 +1,5 @@
 package edu.avans.library.presentation;
+import edu.avans.library.domain.CCalendar;
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,10 +8,12 @@ public class CalendarPanel extends JPanel {
     private MainFrame mainFrame; // for now private
     public MainPanel mainPanel; // for now private
     private MonthPanel monthPanel; // for now private
+    private CCalendar calendar; // for now private
 
     public CalendarPanel(MainPanel mainPanel) {
         this.mainFrame = mainPanel.mainFrame;
         this.mainPanel = mainPanel;
+        calendar = new CCalendar();
         setCalendarPanelDimensions();
         initCalendarPanel();
     }

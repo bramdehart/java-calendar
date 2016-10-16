@@ -1,4 +1,4 @@
-package calendar.domain;
+package edu.avans.library.domain;
 import java.util.Date;
 
 public class Appointment {

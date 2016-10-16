@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="428955a9-26b9-4642-8a9c-55d910eada19" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/main/Main.class" afterPath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/CalendarPanel.class" afterPath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/CalendarPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainPanel$resizeListener.class" afterPath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainPanel$resizeListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainPanel.class" afterPath="$PROJECT_DIR$/out/production/Java-Calendar/edu/avans/library/presentation/MainPanel.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CMonth.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Month.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Calendar.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CCalendar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Appointment.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Appointment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
     </list>
     <ignored path="Java-Calendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,19 +31,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#145#146#0" expanded="true" />
-                <element signature="e#198#199#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,8 +52,8 @@
       <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            <state relative-caret-position="1380">
+              <caret line="92" column="37" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2419#2420#0" expanded="true" />
@@ -92,29 +76,28 @@
       <file leaf-file-name="CalendarPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="195">
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1426#1427#0" expanded="true" />
-                <element signature="e#1467#1468#0" expanded="true" />
-                <element signature="e#1514#1515#0" expanded="true" />
                 <element signature="e#1556#1557#0" expanded="true" />
+                <element signature="e#1597#1598#0" expanded="true" />
+                <element signature="e#1644#1645#0" expanded="true" />
+                <element signature="e#1686#1687#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonthPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MonthPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="540">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#948#949#0" expanded="true" />
                 <element signature="e#1014#1015#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
                 <element signature="e#1095#1096#0" expanded="true" />
                 <element signature="e#1139#1140#0" expanded="true" />
                 <element signature="e#1178#1179#0" expanded="true" />
@@ -123,11 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DayPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Appointment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Appointment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DayPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,12 +128,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Calendar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Calendar.java">
+      <file leaf-file-name="CCalendar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CCalendar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+            <state relative-caret-position="105">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMonth.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CMonth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1476610733000" expanded="true" signature="224:271" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,18 +164,8 @@
       <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Month.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Month.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,17 +206,21 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/MonthView.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/Panel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Calendar.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/SidePanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/PanelUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Month.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Appointment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Calendar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Month.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CCalendar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CMonth.java" />
       </list>
     </option>
   </component>
@@ -942,12 +942,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475775880353</updated>
-      <workItem from="1475775884137" duration="59159000" />
+      <workItem from="1475775884137" duration="63088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59159000" />
+    <option name="totallyTimeSpent" value="63088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1420" height="842" extended-state="0" />
@@ -1090,14 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/SidePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1114,30 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Month.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/CalendarDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -1146,10 +1114,20 @@
             <element signature="imports" expanded="true" />
             <element signature="e#948#949#0" expanded="true" />
             <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
             <element signature="e#1095#1096#0" expanded="true" />
             <element signature="e#1139#1140#0" expanded="true" />
             <element signature="e#1178#1179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1170,21 +1148,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#198#199#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        <state relative-caret-position="1380">
+          <caret line="92" column="37" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2419#2420#0" expanded="true" />
@@ -1203,42 +1170,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/CalendarDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="195">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1467#1468#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
             <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CMonth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1139#1140#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
+            <marker date="1476610733000" expanded="true" signature="224:271" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/domain/Appointment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
           </folding>
         </state>
       </provider>

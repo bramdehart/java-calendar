@@ -1,4 +1,4 @@
-package calendar.domain;
+package edu.avans.library.domain;
 import java.awt.*;
 
 public class Category {

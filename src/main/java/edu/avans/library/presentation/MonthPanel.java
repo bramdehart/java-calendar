@@ -41,6 +41,9 @@ public class MonthPanel extends JPanel {
     public Integer getMonthPanelHeight() {
         return monthPanelHeight;
     }
+
+    private void drawMonthName(Boolean prevMonth, Boolean nextMonth) {
+    }
 }
 
 
