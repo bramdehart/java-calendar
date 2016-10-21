@@ -8,7 +8,7 @@ public class CalendarPanel extends JPanel {
     private MainFrame mainFrame; // for now private
     public MainPanel mainPanel; // for now private
     private MonthPanel monthPanel; // for now private
-    private CCalendar calendar; // for now private
+    public CCalendar calendar;
 
     public CalendarPanel(MainPanel mainPanel) {
         this.mainFrame = mainPanel.mainFrame;

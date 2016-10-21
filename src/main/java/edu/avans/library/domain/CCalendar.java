@@ -3,10 +3,20 @@ import java.util.Calendar;
 
 public class CCalendar {
     private java.util.Calendar calendar;
-    private CMonth month;
+    public CYear year;
+    public CMonth month;
+    public CDay day;
 
     public CCalendar() {
         calendar = Calendar.getInstance();
-        month = new CMonth(CCalendar.this);
+        year = new CYear(calendar);
+        month = new CMonth(calendar);
+        day = new CDay(calendar);
     }
+
+    public Integer getDayCount(Integer month, Integer year) {
+        return 1;
+        //c.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
 }
