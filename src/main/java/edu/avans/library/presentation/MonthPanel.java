@@ -3,6 +3,13 @@ package edu.avans.library.presentation;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The class <code>MonthPanel</code> ensures the month user-interface panel.
+ * It is placed within <code>CalendarPanel</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see CalendarPanel
+ */
 public class MonthPanel extends JPanel {
     private Integer monthPanelWidth, monthPanelHeight;
     private CalendarPanel calendarPanel;

@@ -1,10 +1,17 @@
 package edu.avans.library.domain;
-import javax.swing.*;
-import java.awt.*;
-import java.time.Month;
+//import javax.swing.*;
+//import java.awt.*;
+//import java.time.Month;
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
+/**
+ * The class <code>CMonth</code> contains methods and variables that are month-related.
+ * It is mainly called by <code>CCalendar</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see CCalendar
+ */
 public class CMonth {
     private Calendar calendar;
     private static Integer CURRENT_MONTH;

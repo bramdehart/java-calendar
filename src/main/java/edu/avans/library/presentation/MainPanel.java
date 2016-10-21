@@ -4,6 +4,13 @@ import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 
+/**
+ * The class <code>MainPanel</code> ensures the main panel of the calendar application.
+ * It is placed within <code>MainFrame</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see MainFrame
+ */
 public class MainPanel extends JPanel {
     private static Integer SIDE_PANEL_WIDTH = 175;
     private static Integer TOP_PANEL_HEIGHT = 75;
@@ -36,6 +43,8 @@ public class MainPanel extends JPanel {
         sidePanel.setBackground(Color.BLUE);
         setSidePanelBounds();
         add(sidePanel);
+
+        // TODO: add date selector
     }
 
     private void drawTopPanel() {

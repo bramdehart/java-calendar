@@ -1,6 +1,13 @@
 package edu.avans.library.domain;
 import java.util.Calendar;
 
+/**
+ * The class <code>CDay</code> contains methods and variables that are day-related.
+ * It is mainly called by <code>CCalendar</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see CCalendar
+ */
 public class CDay {
     private Calendar calendar;
     private static Integer CURRENT_DAY;

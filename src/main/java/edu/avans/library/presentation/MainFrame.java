@@ -2,6 +2,13 @@ package edu.avans.library.presentation;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The class <code>MainFrame</code> ensures the main window of the calendar application.
+ * It is called by <code>edu.avans.library.main.Main</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see edu.avans.library.main.Main
+ */
 public class MainFrame extends JFrame {
     private JFrame mainFrame;
     public Integer frameWidth, frameHeight;

@@ -3,6 +3,13 @@ import edu.avans.library.domain.CCalendar;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The class <code>CalendarPanel</code> ensures the panel in which the calendar user-interface will be placed.
+ * It is placed within <code>MainPanel</code>.
+ * @author Bram de Hart
+ * @version 1.0
+ * @see MainPanel
+ */
 public class CalendarPanel extends JPanel {
     private Integer calendarPanelWidth, calendarPanelHeight;
     private MainFrame mainFrame; // for now private
