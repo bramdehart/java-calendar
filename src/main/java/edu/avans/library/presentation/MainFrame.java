@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * The class <code>MainFrame</code> ensures the main window of the calendar application.
+ * The <code>MainFrame</code> ensures the main window of the calendar application.
  * It is called by <code>edu.avans.library.main.Main</code>.
  * @author Bram de Hart
  * @version 1.0

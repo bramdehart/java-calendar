@@ -2,11 +2,12 @@ package edu.avans.library.domain;
 import java.util.Calendar;
 
 /**
- * The class <code>CYear</code> contains methods and variables that are year-related.
- * It is mainly called by <code>CCalendar</code>.
+ * <code>CYear</code> contains methods and variables that are year-related.
+ * It is mainly called by <code>CCalendar</code> and the <code>CalendarManager</code>.
  * @author Bram de Hart
  * @version 1.0
  * @see CCalendar
+ * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CYear {
     private Calendar calendar;

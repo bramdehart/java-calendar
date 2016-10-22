@@ -6,11 +6,12 @@ import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
 /**
- * The class <code>CMonth</code> contains methods and variables that are month-related.
- * It is mainly called by <code>CCalendar</code>.
+ * <code>CMonth</code> contains methods and variables that are month-related.
+ * It is mainly called by <code>CCalendar</code> and the <code>CalendarManager</code>.
  * @author Bram de Hart
  * @version 1.0
  * @see CCalendar
+ * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CMonth {
     private Calendar calendar;

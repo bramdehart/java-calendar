@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * The class <code>CalendarPanel</code> ensures the panel in which the calendar user-interface will be placed.
+ * The <code>CalendarPanel</code> ensures the panel in which the calendar user-interface will be placed.
  * It is placed within <code>MainPanel</code>.
  * @author Bram de Hart
  * @version 1.0

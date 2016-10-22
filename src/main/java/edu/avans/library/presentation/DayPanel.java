@@ -2,7 +2,7 @@ package edu.avans.library.presentation;
 import javax.swing.*;
 
 /**
- * The class <code>DayPanel</code> ensures <b>each</b> day user-interface panel.
+ * The <code>DayPanel</code> ensures the user-interface panel for <b>each</b> day.
  * It is placed within <code>MonthPanel</code>.
  * @author Bram de Hart
  * @version 1.0

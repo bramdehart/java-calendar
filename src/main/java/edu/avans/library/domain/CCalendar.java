@@ -2,10 +2,11 @@ package edu.avans.library.domain;
 import java.util.Calendar;
 
 /**
- * The class <code>CCalendar</code> is the main class within the domain-level in which other domain-level classes are controlled.
- * It represents the logical side of the calendar application.
+ * <code>CCalendar</code> represents the logical side of the calendar application.
+ * It is mainly called by the <code>CalendarManager</code>.
  * @author Bram de Hart
  * @version 1.0
+ * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CCalendar {
     private java.util.Calendar calendar;

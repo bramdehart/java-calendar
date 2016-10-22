@@ -5,10 +5,12 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 
 /**
- * The class <code>MainPanel</code> ensures the main panel of the calendar application.
+ * The <code>MainPanel</code> ensures the main panel of the calendar application.
+ * It contains the sidepanel, toppanel and <code>CalendarPanel</code>.
  * It is placed within <code>MainFrame</code>.
  * @author Bram de Hart
  * @version 1.0
+ * @see CalendarPanel
  * @see MainFrame
  */
 public class MainPanel extends JPanel {

@@ -1,7 +1,9 @@
 package edu.avans.library.businesslogic;
 
 /**
- * Created by Bram on 20/10/2016.
+ * The <code>CalendarManager</code> manages communication between the different classes in the presentation, domain and data-storage level.
+ * @author Bram de Hart
+ * @version 1.0
  */
 public class CalendarManager {
 }
