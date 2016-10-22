@@ -14,12 +14,15 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CMonth {
-    private Calendar calendar;
+//    private Calendar calendar;
     private static Integer CURRENT_MONTH;
     private Integer activeMonth, prevMonth, nextMonth; // for now private
 
-    public CMonth(Calendar calendar) {
-        this.calendar = calendar;
+    /**
+     * Contstructor. Sets the global month-variables.
+     */
+    public CMonth() {
+//        this.calendar = calendar;
         setMonths();
 
         System.out.println(getPreviousMonth());
@@ -30,6 +33,9 @@ public class CMonth {
         System.out.println(getMonthName(getNextMonth()));
     }
 
+    /**
+     * Sets the global month-variables.
+     */
     private void setMonths() {
         setCurrentMonth();
         setActiveMonth(CURRENT_MONTH);
@@ -37,43 +43,85 @@ public class CMonth {
         setNextMonth();
     }
 
+    /**
+     * Gets the previous month.
+     * @return the previous month
+     */
     public Integer getPreviousMonth() {
         return prevMonth;
     }
 
+    /**
+     * Gets the next month.
+     * @return the next month
+     */
     public Integer getNextMonth() {
         return nextMonth;
     }
 
+    /**
+     * Gets the current month.
+     * @return the current month
+     */
     public Integer getCurrentMonth() {
         return CURRENT_MONTH;
     }
 
+    /**
+     * Gets the active month.
+     * @return the active month
+     */
     public Integer getActiveMonth() {
         return activeMonth;
     }
 
+    /**
+     * Sets the previous month, based on the current month.
+     */
     public void setPreviousMonth() {
         prevMonth = activeMonth-1;
     }
 
+    /**
+     * Sets the next month, based on the active month.
+     */
     public void setNextMonth() {
         nextMonth = activeMonth+1;
     }
 
+    /**
+     * Sets the current month.
+     */
     public void setCurrentMonth() {
-        CURRENT_MONTH = this.calendar.get(Calendar.MONTH);
+        CURRENT_MONTH = Calendar.getInstance().get(Calendar.MONTH);
     }
 
+    /**
+     * Sets the active month.
+     * @param month the month that needs to be active
+     */
     public void setActiveMonth(Integer month) {
         activeMonth = month;
     }
 
+    /**
+     * Gets to month name.
+     * @param month the month as an integer (zero-based)
+     * @return the month name as a string
+     */
     public String getMonthName(Integer month) {
         return new DateFormatSymbols().getMonths()[month];
     }
 
-    public Integer getMonthDays(Integer month) {
-        return 5;
+
+    /**
+     * Gets the sum of days in a given month.
+     * @param month the month
+     * @param year the year the month is part of
+     * @return
+     */
+    public Integer getDayCount(Integer month, Integer year) {
+        //c.getActualMaximum(Calendar.DAY_OF_MONTH);
+        return 1;
     }
 }

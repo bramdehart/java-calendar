@@ -9,21 +9,18 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CCalendar {
-    private java.util.Calendar calendar;
+    //private java.util.Calendar calendar;
     public CYear year;
     public CMonth month;
     public CDay day;
 
+    /**
+     * Constructor of the CCalendar object.
+     */
     public CCalendar() {
-        calendar = Calendar.getInstance();
-        year = new CYear(calendar);
-        month = new CMonth(calendar);
-        day = new CDay(calendar);
+        //calendar = Calendar.getInstance();
+        year = new CYear();
+        month = new CMonth();
+        day = new CDay();
     }
-
-    public Integer getDayCount(Integer month, Integer year) {
-        //c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        return 1;
-    }
-
 }

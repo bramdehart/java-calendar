@@ -10,40 +10,57 @@ import java.awt.*;
  * @see edu.avans.library.main.Main
  */
 public class MainFrame extends JFrame {
-    private JFrame mainFrame;
     public Integer frameWidth, frameHeight;
     private MainPanel mainPanel; // for now private
 
+    /**
+     * Constructor. Calls the initialization of the frame.
+     */
     public MainFrame() {
         initFrame();
     }
 
+    /**
+     * Inits the frame.
+     */
     private void initFrame(){
-        mainFrame = new JFrame("Calendar");
+        new JFrame("Calendar");
         setFrameDimension(false);
 
-        mainFrame.setSize(frameWidth,frameHeight);
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setMinimumSize(new Dimension(900, 500));
+        setSize(frameWidth,frameHeight);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setMinimumSize(new Dimension(900, 500));
 
         // add content to frame
         mainPanel = new MainPanel(MainFrame.this);
-        mainFrame.setContentPane(mainPanel);
-        mainFrame.setVisible(true);
+        setContentPane(mainPanel);
+        setVisible(true);
     }
 
+    /**
+     * Gets the height of the frame.
+     * @return the height of the frame
+     */
     public Integer getMainFrameHeight() {
         return frameHeight;
     }
 
+    /**
+     * Gets the width of the frame.
+     * @return the width of the frame
+     */
     public Integer getMainFrameWidth() {
         return frameWidth;
     }
 
+    /**
+     * Sets the frame dimension variables.
+     * @param resized decides whether the frame dimensions are those of the users screen, or needed to be requested from the frame itself.
+     */
     public void setFrameDimension(boolean resized) {
         if (resized) {
             // window is being resized
-            Dimension windowSize = mainFrame.getBounds().getSize();
+            Dimension windowSize = getBounds().getSize();
             frameWidth = (int) windowSize.getWidth();
             frameHeight = (int) windowSize.getHeight();
         }

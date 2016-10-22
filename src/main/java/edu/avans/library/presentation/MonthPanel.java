@@ -16,6 +16,10 @@ public class MonthPanel extends JPanel {
     private DayPanel dayPanel;
     //private CMonth month;
 
+    /**
+     * Constructor. Sets the dimensions and content of the month-panel.
+     * @param calendarPanel is passed to have access to it's methods and variables.
+     */
     public MonthPanel(CalendarPanel calendarPanel) {
         this.calendarPanel = calendarPanel;
         calendarPanel.calendar.month.getCurrentMonth();
@@ -23,6 +27,9 @@ public class MonthPanel extends JPanel {
         initMonthPanel();
     }
 
+    /**
+     * Inits the month-panel.
+     */
     public void initMonthPanel() {
         setLayout(null);
         setBackground(Color.CYAN);
@@ -30,30 +37,45 @@ public class MonthPanel extends JPanel {
         setMonthPanelBounds();
     }
 
+    /**
+     * Resizes the mont-panel. Is called by an <code>resizeListener</code> inside <code>MainPanel</code>.
+     */
     public void resizeMonthPanel() {
         setMonthPanelDimensions();
         setMonthPanelBounds();
     }
 
+    /**
+     * Sets the month-panel's dimensions.
+     */
     private void setMonthPanelDimensions() {
         monthPanelWidth = calendarPanel.getCalendarPanelWidth();
         monthPanelHeight = calendarPanel.getCalendarPanelHeight();
     }
 
+    /**
+     * Sets the month-panel's bounds with the known dimensions.
+     */
     private void setMonthPanelBounds() {
         setBounds(0, 0, monthPanelWidth, monthPanelHeight);
     }
 
+    /**
+     * Gets the width of the month-panel.
+     * @return the width of the month-panel
+     */
     public Integer getMonthPanelWidth() {
         return monthPanelWidth;
     }
 
+    /**
+     * Gets the height of the month-panel.
+     * @return the height of the month-panel
+     */
     public Integer getMonthPanelHeight() {
         return monthPanelHeight;
     }
 
-    private void drawMonthName(Boolean prevMonth, Boolean nextMonth) {
-    }
 }
 
 

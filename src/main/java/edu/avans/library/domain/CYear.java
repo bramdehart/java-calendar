@@ -10,15 +10,21 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CYear {
-    private Calendar calendar;
+//    private Calendar calendar;
     private static Integer CURRENT_YEAR;
     private Integer activeYear, prevYear, nextYear; // for now private
 
-    public CYear(Calendar calendar) {
-        this.calendar = calendar;
+    /**
+     * Constructor. Sets the global year-variables.
+     */
+    public CYear() {
+        //this.calendar = calendar;
         setYears();
     }
 
+    /**
+     * Sets the global year-variables.
+     */
     private void setYears() {
         setCurrentYear();
         setActiveYear(CURRENT_YEAR);
@@ -26,35 +32,64 @@ public class CYear {
         setNextYear();
     }
 
+    /**
+     * Gets the previous year, based on the active year.
+     * @return the previous year
+     */
     public Integer getPreviousYear() {
         return prevYear;
     }
 
+    /**
+     * Gets the next year, based on the active year.
+     * @return the next year
+     */
     public Integer getNextYear() {
         return nextYear;
     }
 
+    /**
+     * Gets the current year.
+     * @return the current year
+     */
     public Integer getCurrentYear() {
         return CURRENT_YEAR;
     }
 
+    /**
+     * Gets the active year.
+     * @return the active year
+     */
     public Integer getActiveYear() {
         return activeYear;
     }
 
+    /**
+     * Sets the active year.
+     * @param year the year that needs to be active
+     */
     public void setActiveYear(Integer year) {
         activeYear = year;
     }
 
+    /**
+     * Sets the previous year, based on the active year.
+     */
     public void setPreviousYear() {
         prevYear = activeYear-1;
     }
 
+    /**
+     * Sets the next year, based on the active year.
+     */
     public void setNextYear() {
         nextYear = activeYear+1;
     }
 
+    /**
+     * Sets the current year.
+     */
     public void setCurrentYear() {
-        CURRENT_YEAR = this.calendar.get(Calendar.YEAR);
+        CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR);
     }
 }
