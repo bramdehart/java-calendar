@@ -11,8 +11,7 @@ import java.util.Calendar;
  */
 public class CYear {
 //    private Calendar calendar;
-    private static Integer CURRENT_YEAR;
-    private Integer activeYear, prevYear, nextYear; // for now private
+    private Integer activeYear, prevYear, nextYear, currentYear; // for now private
 
     /**
      * Constructor. Sets the global year-variables.
@@ -27,7 +26,7 @@ public class CYear {
      */
     private void setYears() {
         setCurrentYear();
-        setActiveYear(CURRENT_YEAR);
+        setActiveYear(currentYear);
         setPreviousYear();
         setNextYear();
     }
@@ -53,7 +52,7 @@ public class CYear {
      * @return the current year
      */
     public Integer getCurrentYear() {
-        return CURRENT_YEAR;
+        return currentYear;
     }
 
     /**
@@ -90,6 +89,6 @@ public class CYear {
      * Sets the current year.
      */
     public void setCurrentYear() {
-        CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR);
+        currentYear = Calendar.getInstance().get(Calendar.YEAR);
     }
 }

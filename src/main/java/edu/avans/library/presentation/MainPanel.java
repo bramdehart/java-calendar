@@ -74,9 +74,12 @@ public class MainPanel extends JPanel {
         topPanel.add(prevMonthButton);
         topPanel.add(currentDayButton);
         topPanel.add(nextMonthButton);
-        // TODO: top panel add heading + days
         topPanel.setBackground(Color.PINK);
         setTopPanelBounds();
+
+        // draw week days headings
+
+
         add(topPanel);
     }
 

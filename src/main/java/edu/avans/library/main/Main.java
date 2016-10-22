@@ -8,7 +8,7 @@ import edu.avans.library.presentation.MainFrame;
  */
 public class Main {
     /**
-     * Defaults constructor. Inits the main frame.
+     * Defaults constructor. Inits the main frame
      * @param args
      */
     public static void main(String[] args) {

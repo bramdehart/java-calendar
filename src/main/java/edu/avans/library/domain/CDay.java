@@ -11,8 +11,7 @@ import java.util.Calendar;
  */
 public class CDay {
 //    private Calendar calendar;
-    private static Integer CURRENT_DAY;
-    private Integer activeDay, prevDay, nextDay; // for now private
+    private Integer activeDay, prevDay, nextDay, currentDay; // for now private
 
     /**
      * Constructor. Sets the global day-variables.
@@ -27,7 +26,7 @@ public class CDay {
      */
     private void setDays() {
         setCurrentDay();
-        setActiveDay(CURRENT_DAY);
+        setActiveDay(currentDay);
         setPreviousDay();
         setNextDay();
     }
@@ -53,7 +52,7 @@ public class CDay {
      * @return the current day
      */
     public Integer getCurrentDay() {
-        return CURRENT_DAY;
+        return currentDay;
     }
 
     /**
@@ -90,6 +89,6 @@ public class CDay {
      * Sets the current day.
      */
     public void setCurrentDay() {
-        CURRENT_DAY = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
 }

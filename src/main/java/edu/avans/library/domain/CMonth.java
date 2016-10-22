@@ -15,8 +15,7 @@ import java.util.Calendar;
  */
 public class CMonth {
 //    private Calendar calendar;
-    private static Integer CURRENT_MONTH;
-    private Integer activeMonth, prevMonth, nextMonth; // for now private
+    private Integer activeMonth, prevMonth, nextMonth, currentMonth; // for now private
 
     /**
      * Contstructor. Sets the global month-variables.
@@ -38,7 +37,7 @@ public class CMonth {
      */
     private void setMonths() {
         setCurrentMonth();
-        setActiveMonth(CURRENT_MONTH);
+        setActiveMonth(currentMonth);
         setPreviousMonth();
         setNextMonth();
     }
@@ -64,7 +63,7 @@ public class CMonth {
      * @return the current month
      */
     public Integer getCurrentMonth() {
-        return CURRENT_MONTH;
+        return currentMonth;
     }
 
     /**
@@ -93,7 +92,7 @@ public class CMonth {
      * Sets the current month.
      */
     public void setCurrentMonth() {
-        CURRENT_MONTH = Calendar.getInstance().get(Calendar.MONTH);
+        currentMonth = Calendar.getInstance().get(Calendar.MONTH);
     }
 
     /**
