@@ -1,5 +1,7 @@
 package edu.avans.library.presentation;
 //import edu.avans.library.domain.CMonth;
+import edu.avans.library.businesslogic.CalendarManager;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,7 +16,7 @@ public class MonthPanel extends JPanel {
     private Integer monthPanelWidth, monthPanelHeight;
     private CalendarPanel calendarPanel;
     private DayPanel dayPanel;
-    //private CMonth month;
+    private CalendarManager manager;
 
     /**
      * Constructor. Sets the dimensions and content of the month-panel.
@@ -22,7 +24,6 @@ public class MonthPanel extends JPanel {
      */
     public MonthPanel(CalendarPanel calendarPanel) {
         this.calendarPanel = calendarPanel;
-        calendarPanel.calendar.month.getCurrentMonth();
         setMonthPanelDimensions();
         initMonthPanel();
     }

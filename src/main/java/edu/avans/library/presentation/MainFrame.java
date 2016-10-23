@@ -1,4 +1,7 @@
 package edu.avans.library.presentation;
+import edu.avans.library.businesslogic.CalendarManager;
+import edu.avans.library.domain.CCalendar;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,11 +15,15 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     public Integer frameWidth, frameHeight;
     private MainPanel mainPanel; // for now private
+    public CCalendar calendar;
+    private CalendarManager manager;
 
     /**
      * Constructor. Calls the initialization of the frame.
      */
     public MainFrame() {
+        calendar = new CCalendar();
+        manager = new CalendarManager();
         initFrame();
     }
 

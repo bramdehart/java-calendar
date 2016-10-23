@@ -2,6 +2,8 @@ package edu.avans.library.domain;
 //import javax.swing.*;
 //import java.awt.*;
 //import java.time.Month;
+import edu.avans.library.businesslogic.CalendarManager;
+
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
@@ -14,16 +16,13 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CMonth {
-//    private Calendar calendar;
     private Integer activeMonth, prevMonth, nextMonth, currentMonth; // for now private
 
     /**
      * Contstructor. Sets the global month-variables.
      */
     public CMonth() {
-//        this.calendar = calendar;
         setMonths();
-
         System.out.println(getPreviousMonth());
         System.out.println(getCurrentMonth());
         System.out.println(getNextMonth());

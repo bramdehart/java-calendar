@@ -1,4 +1,6 @@
 package edu.avans.library.domain;
+import edu.avans.library.businesslogic.CalendarManager;
+
 import java.util.Date;
 
 /**
@@ -15,4 +17,10 @@ public class Appointment {
     private String description;
     private Date startDate;
     private Date endDate;
+
+    /**
+     *
+     */
+    public Appointment() {
+    }
 }

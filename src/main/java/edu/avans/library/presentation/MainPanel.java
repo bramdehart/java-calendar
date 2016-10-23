@@ -1,8 +1,12 @@
 package edu.avans.library.presentation;
+import edu.avans.library.businesslogic.CalendarManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
+import java.util.Calendar;
+
 
 /**
  * The <code>MainPanel</code> ensures the main panel of the calendar application.
@@ -21,14 +25,15 @@ public class MainPanel extends JPanel {
     private JPanel sidePanel, topPanel; // for now private
     private CalendarPanel calendarPanel; // for now private
     public MainFrame mainFrame;
-
-    // TODO: adding month + weekday headings to toppanel
+    private JLabel sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel, thursdayLabel, fridayLabel, saturdayLabel, monthYearLabel;
+    private CalendarManager manager;
 
     /**
      * Constructor. Sets the dimensions and content of the main-panel.
      * @param mainFrame is passed to have access to it's methods and variables.
      */
     public MainPanel(MainFrame mainFrame) {
+        manager = new CalendarManager();
         this.mainFrame = mainFrame;
         sidePanelHeight = mainFrame.getMainFrameHeight();
         topPanelWidth = mainFrame.getMainFrameWidth() - SIDE_PANEL_WIDTH;
@@ -70,17 +75,59 @@ public class MainPanel extends JPanel {
         currentDayButton = new JButton("Today");
         nextMonthButton = new JButton(">");
 
+        // day labels
+        sundayLabel = new JLabel("Sun", SwingConstants.RIGHT);
+        sundayLabel.setBackground(Color.RED);
+        sundayLabel.setOpaque(true);
+        mondayLabel = new JLabel("Mon", SwingConstants.RIGHT);
+        mondayLabel.setBackground(Color.YELLOW);
+        mondayLabel.setOpaque(true);
+        tuesdayLabel = new JLabel("Tue", SwingConstants.RIGHT);
+        tuesdayLabel.setBackground(Color.RED);
+        tuesdayLabel.setOpaque(true);
+        wednesdayLabel = new JLabel("Wed", SwingConstants.RIGHT);
+        wednesdayLabel.setBackground(Color.YELLOW);
+        wednesdayLabel.setOpaque(true);
+        thursdayLabel = new JLabel("Thu", SwingConstants.RIGHT);
+        thursdayLabel.setBackground(Color.RED);
+        thursdayLabel.setOpaque(true);
+        fridayLabel = new JLabel("Fri", SwingConstants.RIGHT);
+        fridayLabel.setBackground(Color.YELLOW);
+        fridayLabel.setOpaque(true);
+        saturdayLabel = new JLabel("Sat", SwingConstants.RIGHT);
+        saturdayLabel.setBackground(Color.RED);
+        saturdayLabel.setOpaque(true);
+
+        // draw the active month and year label
+        monthYearLabel = new JLabel(manager.getActiveMonthName(mainFrame.calendar)+" "+manager.getActiveYear(mainFrame.calendar));
+        monthYearLabel.setBackground(Color.magenta);
+        monthYearLabel.setOpaque(true);
+
         // add components
         topPanel.add(prevMonthButton);
         topPanel.add(currentDayButton);
         topPanel.add(nextMonthButton);
+        topPanel.add(sundayLabel);
+        topPanel.add(mondayLabel);
+        topPanel.add(tuesdayLabel);
+        topPanel.add(wednesdayLabel);
+        topPanel.add(thursdayLabel);
+        topPanel.add(fridayLabel);
+        topPanel.add(saturdayLabel);
+        topPanel.add(monthYearLabel);
+
         topPanel.setBackground(Color.PINK);
         setTopPanelBounds();
-
-        // draw week days headings
-
-
         add(topPanel);
+    }
+
+    /**
+     * Draws the active month and year in the top-panel
+     */
+    private void drawMonthYearLabel() {
+        System.out.println("Dit is een test");
+        System.out.println(manager.getActiveMonthName(mainFrame.calendar));
+
     }
 
     /**
@@ -90,7 +137,6 @@ public class MainPanel extends JPanel {
         resizeSidePanel();
         resizeTopPanel();
         calendarPanel.resizeCalendarPanel();
-        // TODO: resize month + daypanels
     }
 
     /**
@@ -161,6 +207,15 @@ public class MainPanel extends JPanel {
      */
     private void setTopPanelBounds() {
         topPanel.setBounds(SIDE_PANEL_WIDTH, 0, topPanelWidth, TOP_PANEL_HEIGHT);
+        Integer dayLabelWidth = topPanelWidth / 7;
+        sundayLabel.setBounds(0, 50, dayLabelWidth, 25);
+        mondayLabel.setBounds(dayLabelWidth, 50, dayLabelWidth, 25);
+        tuesdayLabel.setBounds(2*dayLabelWidth, 50, dayLabelWidth, 25);
+        wednesdayLabel.setBounds(3*dayLabelWidth, 50, dayLabelWidth, 25);
+        thursdayLabel.setBounds(4*dayLabelWidth, 50, dayLabelWidth, 25);
+        fridayLabel.setBounds(5*dayLabelWidth, 50, dayLabelWidth, 25);
+        saturdayLabel.setBounds(6*dayLabelWidth, 50, dayLabelWidth, 25);
+        monthYearLabel.setBounds(0,0,monthYearLabel.getWidth(),50);
     }
 
     /**

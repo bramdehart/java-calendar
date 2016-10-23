@@ -1,4 +1,6 @@
 package edu.avans.library.domain;
+import edu.avans.library.businesslogic.CalendarManager;
+
 import java.util.Calendar;
 
 /**

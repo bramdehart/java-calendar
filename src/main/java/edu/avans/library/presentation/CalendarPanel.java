@@ -1,4 +1,5 @@
 package edu.avans.library.presentation;
+import edu.avans.library.businesslogic.CalendarManager;
 import edu.avans.library.domain.CCalendar;
 import javax.swing.*;
 import java.awt.*;
@@ -16,15 +17,16 @@ public class CalendarPanel extends JPanel {
     public MainPanel mainPanel; // for now private
     private MonthPanel monthPanel; // for now private
     public CCalendar calendar;
+    private CalendarManager manager;
 
     /**
      * Constructor. Creates an calendar object and inits the calendar-panel.
      * @param mainPanel is passed to have access to it's methods.
      */
     public CalendarPanel(MainPanel mainPanel) {
+        manager = new CalendarManager();
         this.mainFrame = mainPanel.mainFrame;
         this.mainPanel = mainPanel;
-        calendar = new CCalendar();
         setCalendarPanelDimensions();
         initCalendarPanel();
     }

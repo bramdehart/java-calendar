@@ -1,4 +1,5 @@
 package edu.avans.library.domain;
+import edu.avans.library.businesslogic.CalendarManager;
 import java.util.Calendar;
 
 /**
@@ -18,7 +19,13 @@ public class CCalendar {
      * Constructor of the CCalendar object.
      */
     public CCalendar() {
-        //calendar = Calendar.getInstance();
+        initCalendar();
+    }
+
+    /**
+     * Inits a new calendar
+     */
+    void initCalendar() {
         year = new CYear();
         month = new CMonth();
         day = new CDay();

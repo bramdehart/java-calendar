@@ -1,7 +1,9 @@
 package edu.avans.library.datastorage;
 
 /**
- * Created by Bram on 22/10/2016.
+ * Ensures a stable database connection so the application can communicate with the database.
+ * @author Bram de Hart
+ * @version 1.0
  */
 public class DatabaseConnection {
 }
