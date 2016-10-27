@@ -103,7 +103,7 @@ public class DayDetailPanel extends JPanel {
     private void drawAppointments() {
         System.out.println("komt hier in");
 
-        FlowLayout appointmentsLayout = new FlowLayout();
+        JPanel appointmentsPanel = new JPanel(new FlowLayout());
         Integer appointmentsSize = appointments.size();
 
         System.out.println(appointmentsSize);
@@ -116,10 +116,10 @@ public class DayDetailPanel extends JPanel {
                 JLabel location = new JLabel(appointment.location);
                 JLabel description = new JLabel(appointment.description);
 
-                appointmentsLayout.add(time);
-                appointmentsLayout.add(time);
-                appointmentsLayout.add(location);
-                appointmentsLayout.add(description);
+                appointmentsPanel.add(time);
+                appointmentsPanel.add(time);
+                appointmentsPanel.add(location);
+                appointmentsPanel.add(description);
             }
         }
         else {
