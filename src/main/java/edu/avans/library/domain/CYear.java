@@ -1,5 +1,4 @@
 package edu.avans.library.domain;
-import edu.avans.library.businesslogic.CalendarManager;
 import java.util.Calendar;
 
 /**
@@ -11,14 +10,12 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CYear {
-//    private Calendar calendar;
     private Integer activeYear, prevYear, nextYear, currentYear; // for now private
 
     /**
      * Constructor. Sets the global year-variables.
      */
     public CYear() {
-        //this.calendar = calendar;
         setYears();
     }
 
@@ -27,7 +24,7 @@ public class CYear {
      */
     private void setYears() {
         setCurrentYear();
-        setActiveYear(currentYear);
+        setActiveYear(getCurrentYear());
         setPreviousYear();
         setNextYear();
     }
@@ -92,4 +89,5 @@ public class CYear {
     public void setCurrentYear() {
         currentYear = Calendar.getInstance().get(Calendar.YEAR);
     }
+
 }

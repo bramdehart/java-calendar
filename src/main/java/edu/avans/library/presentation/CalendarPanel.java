@@ -14,8 +14,8 @@ import java.awt.*;
 public class CalendarPanel extends JPanel {
     private Integer calendarPanelWidth, calendarPanelHeight;
     private MainFrame mainFrame; // for now private
-    public MainPanel mainPanel; // for now private
-    private MonthPanel monthPanel; // for now private
+    public MainPanel mainPanel;
+    public MonthPanel monthPanel;
     public CCalendar calendar;
     private CalendarManager manager;
 
@@ -25,7 +25,7 @@ public class CalendarPanel extends JPanel {
      */
     public CalendarPanel(MainPanel mainPanel) {
         manager = new CalendarManager();
-        this.mainFrame = mainPanel.mainFrame;
+        mainFrame = mainPanel.mainFrame;
         this.mainPanel = mainPanel;
         setCalendarPanelDimensions();
         initCalendarPanel();
@@ -36,11 +36,8 @@ public class CalendarPanel extends JPanel {
      */
     private void initCalendarPanel() {
         setLayout(null);
-        setBackground(Color.GREEN);
-        setBorder(BorderFactory.createLineBorder(Color.RED));
         setCalendarPanelBounds();
         drawMonthPanel();
-        // TODO: init day blocks
     }
 
     /**
@@ -56,7 +53,7 @@ public class CalendarPanel extends JPanel {
      * Sets the calendar-panel's dimensions.
      */
     private void setCalendarPanelDimensions() {
-        calendarPanelWidth = mainFrame.getMainFrameWidth() - mainPanel.getSidePanelWidth();
+        calendarPanelWidth = mainFrame.getMainFrameWidth();
         calendarPanelHeight = mainFrame.getMainFrameHeight() - mainPanel.getTopPanelHeight();
     }
 
@@ -64,7 +61,7 @@ public class CalendarPanel extends JPanel {
      * Sets the calendar-panel's bounds with the known dimensions.
      */
     private void setCalendarPanelBounds() {
-        setBounds(mainPanel.getSidePanelWidth(), mainPanel.getTopPanelHeight(), calendarPanelWidth, calendarPanelHeight);
+        setBounds(0, mainPanel.getTopPanelHeight(), calendarPanelWidth, calendarPanelHeight);
     }
 
     /**

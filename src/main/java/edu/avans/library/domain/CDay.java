@@ -1,5 +1,4 @@
 package edu.avans.library.domain;
-import edu.avans.library.businesslogic.CalendarManager;
 
 import java.util.Calendar;
 
@@ -12,14 +11,12 @@ import java.util.Calendar;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CDay {
-//    private Calendar calendar;
-    private Integer activeDay, prevDay, nextDay, currentDay; // for now private
+    private Integer activeDay, prevDay, nextDay, currentDay;
 
     /**
      * Constructor. Sets the global day-variables.
      */
     public CDay() {
-//        this.calendar = calendar;
         setDays();
     }
 
@@ -28,7 +25,7 @@ public class CDay {
      */
     private void setDays() {
         setCurrentDay();
-        setActiveDay(currentDay);
+        setActiveDay(getCurrentDay());
         setPreviousDay();
         setNextDay();
     }
@@ -71,6 +68,12 @@ public class CDay {
      */
     public void setActiveDay(Integer day) {
         activeDay = day;
+        if (activeDay > 31) {
+            activeDay = 31;
+        }
+        if (activeDay < 1) {
+            activeDay = 1;
+        }
     }
 
     /**
@@ -93,4 +96,5 @@ public class CDay {
     public void setCurrentDay() {
         currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
+
 }

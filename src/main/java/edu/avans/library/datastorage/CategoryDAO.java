@@ -9,4 +9,5 @@ package edu.avans.library.datastorage;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class CategoryDAO {
+
 }

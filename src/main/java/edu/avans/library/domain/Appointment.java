@@ -1,7 +1,7 @@
 package edu.avans.library.domain;
-import edu.avans.library.businesslogic.CalendarManager;
 
 import java.util.Date;
+import java.sql.Time;
 
 /**
  * The class <code>Appointent</code> represents an appointment.
@@ -13,14 +13,23 @@ import java.util.Date;
  */
 
 public class Appointment {
-    private String title;
-    private String description;
-    private Date startDate;
-    private Date endDate;
+    private Integer appointmentId;
+    public String title, description, location;
+    private Date date;
+    public Time startTime, endTime;
 
     /**
-     *
+     * Constructor. Sets the given variables/
      */
-    public Appointment() {
+    public Appointment(Integer appointmentId, String title, String description, String location, Date date, Time startTime, Time endTime) {
+        this.appointmentId = appointmentId;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
+
+
 }

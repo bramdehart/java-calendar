@@ -1,5 +1,4 @@
 package edu.avans.library.domain;
-import edu.avans.library.businesslogic.CalendarManager;
 
 import java.awt.*;
 
@@ -15,9 +14,6 @@ public class Category {
     private String title;
     private Color color;
 
-    /**
-     *
-     */
     public Category() {
     }
 }

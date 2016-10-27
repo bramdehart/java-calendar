@@ -1,8 +1,4 @@
 package edu.avans.library.domain;
-//import javax.swing.*;
-//import java.awt.*;
-//import java.time.Month;
-import edu.avans.library.businesslogic.CalendarManager;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
@@ -23,12 +19,6 @@ public class CMonth {
      */
     public CMonth() {
         setMonths();
-        System.out.println(getPreviousMonth());
-        System.out.println(getCurrentMonth());
-        System.out.println(getNextMonth());
-        System.out.println(getMonthName(getPreviousMonth()));
-        System.out.println(getMonthName(getCurrentMonth()));
-        System.out.println(getMonthName(getNextMonth()));
     }
 
     /**
@@ -77,14 +67,25 @@ public class CMonth {
      * Sets the previous month, based on the current month.
      */
     public void setPreviousMonth() {
-        prevMonth = activeMonth-1;
+        if (activeMonth > 0) {
+            prevMonth = activeMonth-1;
+        }
+        else {
+            prevMonth = 11;
+        }
     }
 
     /**
      * Sets the next month, based on the active month.
      */
     public void setNextMonth() {
-        nextMonth = activeMonth+1;
+        if (activeMonth < 11) {
+            nextMonth = activeMonth+1;
+        }
+        else {
+            nextMonth = 0;
+        }
+
     }
 
     /**
@@ -99,7 +100,15 @@ public class CMonth {
      * @param month the month that needs to be active
      */
     public void setActiveMonth(Integer month) {
-        activeMonth = month;
+        if (month > 11) {
+            activeMonth = 11;
+        }
+        else if (month < 0) {
+            activeMonth = 0;
+        }
+        else {
+            activeMonth = month;
+        }
     }
 
     /**
@@ -111,15 +120,31 @@ public class CMonth {
         return new DateFormatSymbols().getMonths()[month];
     }
 
-
     /**
      * Gets the sum of days in a given month.
      * @param month the month
-     * @param year the year the month is part of
+     * @param year the year the month is in
      * @return
      */
     public Integer getDayCount(Integer month, Integer year) {
-        //c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        return 1;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DATE, 1);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.YEAR, year);
+        return calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * Gets the first weekday of the month.
+     * @param month the month
+     * @param year the year the month is in
+     * @return the first weekday of the month, zero based
+     */
+    public Integer getFirstWeekDay(Integer month, Integer year) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DATE, 1);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.YEAR, year);
+        return calendar.get(Calendar.DAY_OF_WEEK);
     }
 }
