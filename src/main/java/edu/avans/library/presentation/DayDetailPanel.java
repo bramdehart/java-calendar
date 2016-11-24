@@ -5,6 +5,7 @@ import edu.avans.library.domain.Appointment;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -18,22 +19,20 @@ import java.util.ArrayList;
 public class DayDetailPanel extends JPanel {
     private Integer day, month, year;
     private Integer dayDetailPanelWidth, dayDetailPanelHeight;
-    private MainFrame mainFrame;
     private MainPanel mainPanel;
     private CalendarManager manager = new CalendarManager();
     private ArrayList<Appointment> appointments;
+    private JScrollPane scrollPane;
 
     /**
      * Constructor. Creates an calendar object and inits the calendar-panel.
-     * @param mainPanel is passed to have access to it's methods.
      */
-    public DayDetailPanel(MainPanel mainPanel, Integer month, Integer day, Integer year) {
-        mainFrame = mainPanel.mainFrame;
-        appointments = manager.getAppointments(mainFrame.calendar.getDate(month,day,year));
+    public DayDetailPanel(MainPanel mainPanel) {
         this.mainPanel = mainPanel;
-        this.month = month;
-        this.day = day;
-        this.year = year;
+        month = mainPanel.mainFrame.calendar.month.getActiveMonth();
+        day = mainPanel.mainFrame.calendar.day.getActiveDay();
+        year = mainPanel.mainFrame.calendar.year.getActiveYear();
+        appointments = manager.getAppointments(mainPanel.mainFrame.calendar.getDate(month,day,year));
 
         drawDayDetailPanel();
     }
@@ -42,11 +41,11 @@ public class DayDetailPanel extends JPanel {
      * Draws the day-detail panel.
      */
     private void drawDayDetailPanel() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(null);
         setDayDetailPanelDimensions();
         setDayDetailPanelBounds();
-        drawDayLabel();
 
+        drawDayLabel();
         drawAppointments();
     }
 
@@ -62,26 +61,28 @@ public class DayDetailPanel extends JPanel {
      * Sets the day-detail panel's dimensions.
      */
     private void setDayDetailPanelDimensions() {
-        dayDetailPanelWidth = (int) (mainFrame.getContentPane().getWidth() * 0.25);
-        dayDetailPanelHeight = mainFrame.getMainFrameHeight();
+        dayDetailPanelWidth = (int) (mainPanel.mainFrame.getContentPane().getWidth() * 0.2);
+        dayDetailPanelHeight = mainPanel.mainFrame.getContentPane().getHeight();
     }
 
     /**
      * Sets the day-detail panel's bounds with the known dimensions.
      */
     private void setDayDetailPanelBounds() {
-        setBounds((int) (mainFrame.getContentPane().getWidth() * 0.75), 0, dayDetailPanelWidth, dayDetailPanelHeight);
+        setBounds((int) mainPanel.mainFrame.getContentPane().getWidth() - dayDetailPanelWidth, 0, dayDetailPanelWidth, dayDetailPanelHeight);
+        //scrollPane.setBounds(0,mainPanel.getTopPanelHeight(),dayDetailPanelWidth, dayDetailPanelHeight - mainPanel.getTopPanelHeight());
     }
 
     /**
      * Draws the weekday-name and month day heading.
      */
     private void drawDayLabel() {
-        String weekDayName = mainFrame.calendar.week.getWeekDayName(mainFrame.calendar.getDate(month, day, year));
+        String weekDayName = mainPanel.mainFrame.calendar.week.getWeekDayName(mainPanel.mainFrame.calendar.getDate(month, day, year));
         JLabel dayLabel = new JLabel(weekDayName+" "+day);
+        dayLabel.setBounds(15,10,dayDetailPanelWidth,50);
         dayLabel.setForeground(Color.decode("#333333"));
         dayLabel.setFont(new Font("Arial", Font.PLAIN, 30));
-        dayLabel.setBorder(new EmptyBorder(17, 17, 17, 17));
+
         add(dayLabel);
     }
 
@@ -89,10 +90,10 @@ public class DayDetailPanel extends JPanel {
      * Redraws the day detail-panel
      */
     public void redrawDayDetailPanel() {
-        month = mainFrame.calendar.month.getActiveMonth();
-        day = mainFrame.calendar.day.getActiveDay();
-        year = mainFrame.calendar.year.getActiveYear();
-        appointments = manager.getAppointments(mainFrame.calendar.getDate(month,day,year));
+        month = mainPanel.mainFrame.calendar.month.getActiveMonth();
+        day = mainPanel.mainFrame.calendar.day.getActiveDay();
+        year = mainPanel.mainFrame.calendar.year.getActiveYear();
+        appointments = manager.getAppointments(mainPanel.mainFrame.calendar.getDate(month,day,year));
 
         removeAll();
         drawDayDetailPanel();
@@ -101,29 +102,60 @@ public class DayDetailPanel extends JPanel {
     }
 
     private void drawAppointments() {
-        System.out.println("komt hier in");
+        JPanel appointmentsPanel = new JPanel();
+        appointmentsPanel.setLayout(new BoxLayout(appointmentsPanel, BoxLayout.Y_AXIS));
 
-        JPanel appointmentsPanel = new JPanel(new FlowLayout());
+        scrollPane = new JScrollPane(appointmentsPanel);
+        scrollPane.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.decode("#E2E2E2")));
+
+        // set bounds
+        scrollPane.setBounds(0,mainPanel.getTopPanelHeight(),dayDetailPanelWidth, dayDetailPanelHeight - mainPanel.getTopPanelHeight());
+        scrollPane.setOpaque(true); //?
+
         Integer appointmentsSize = appointments.size();
 
-        System.out.println(appointmentsSize);
-
         if(appointmentsSize > 0) {
-            for (Integer i = 0; i < appointmentsSize; i++) {
-                Appointment appointment = appointments.get(i);
-                JLabel time = new JLabel(appointment.startTime+" - "+appointment.endTime);
-                JLabel title = new JLabel(appointment.title);
-                JLabel location = new JLabel(appointment.location);
-                JLabel description = new JLabel(appointment.description);
+            for (Integer i = 0; i < appointments.size(); i++) {
+                JPanel appointmentPanel = new JPanel();
+                appointmentPanel.setLayout(new BoxLayout(appointmentPanel, BoxLayout.Y_AXIS));
+                appointmentPanel.setBorder(new EmptyBorder(12, 12, 12, 12));
 
-                appointmentsPanel.add(time);
-                appointmentsPanel.add(time);
-                appointmentsPanel.add(location);
-                appointmentsPanel.add(description);
+                Appointment appointment = appointments.get(i);
+
+                // format times
+                String startTime = appointment.startTime.toString();
+                startTime = startTime.substring(0, startTime.length() - 3);
+                String endTime = appointment.endTime.toString();
+                endTime = endTime.substring(0, endTime.length() - 3);
+
+
+                JLabel time = new JLabel(startTime+" - "+endTime);
+                time.setFont(new Font("Arial", Font.PLAIN, 14));
+                time.setBorder(new EmptyBorder(0,0,10,0));
+                JLabel title = new JLabel("Name: "+appointment.title);
+                title.setFont(new Font("Arial", Font.PLAIN, 14));
+                JLabel location = new JLabel("Location: "+appointment.location);
+                location.setFont(new Font("Arial", Font.PLAIN, 14));
+                JLabel description = new JLabel("Notes: "+appointment.description);
+                description.setFont(new Font("Arial", Font.PLAIN, 14));
+
+                appointmentPanel.add(time);
+                appointmentPanel.add(title);
+                appointmentPanel.add(location);
+                appointmentPanel.add(description);
+
+                appointmentsPanel.add(appointmentPanel);
             }
+
+
         }
         else {
-            JLabel testLabel = new JLabel("No events found");
+            JLabel noResultsLabel = new JLabel("No events found");
+            noResultsLabel.setFont(new Font("Arial", Font.PLAIN, 14));
+            noResultsLabel.setBorder(new EmptyBorder(12, 12, 12, 12));
+            appointmentsPanel.add(noResultsLabel);
         }
+
+        add(scrollPane);
     }
 }

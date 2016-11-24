@@ -136,7 +136,7 @@ public class MainPanel extends JPanel {
      * Updates the top-panel dimensions and sets it's new bounds.
      */
     private void resizeTopPanel() {
-        topPanelWidth = (int) (mainFrame.getContentPane().getWidth() * 0.75);
+        topPanelWidth = (int) (mainFrame.getContentPane().getWidth() * 0.8);
         setTopPanelBounds();
     }
 
@@ -152,7 +152,7 @@ public class MainPanel extends JPanel {
      * Draws the day-detail panel.
      */
     private void drawDayDetailPanel() {
-        dayDetailPanel = new DayDetailPanel(MainPanel.this, mainFrame.calendar.month.getActiveMonth(), mainFrame.calendar.day.getActiveDay(), mainFrame.calendar.year.getActiveYear());
+        dayDetailPanel = new DayDetailPanel(MainPanel.this);
         add(dayDetailPanel);
     }
 

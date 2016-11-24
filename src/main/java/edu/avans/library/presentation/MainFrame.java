@@ -14,7 +14,7 @@ import java.awt.*;
  */
 public class MainFrame extends JFrame {
     public Integer frameWidth, frameHeight;
-    private MainPanel mainPanel;
+    public MainPanel mainPanel;
     public CCalendar calendar;
     public CalendarManager manager;
 
@@ -31,15 +31,19 @@ public class MainFrame extends JFrame {
      * Inits the frame.
      */
     private void initFrame(){
-        new JFrame("Calendar");
+        new JFrame();
         setFrameDimension(false);
-        setSize(frameWidth,frameHeight);
+        setTitle("Java Calendar");
+        //setSize(frameWidth,frameHeight);
+        setSize(1300,800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(1200, 675));
 
         // add content to frame
         mainPanel = new MainPanel(MainFrame.this);
         setContentPane(mainPanel);
+
+        setResizable(false);
         setVisible(true);
     }
 

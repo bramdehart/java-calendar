@@ -24,7 +24,7 @@ public class AppointmentPanel extends JPanel {
     private Integer month, day, year;
     private Date date;
     private CalendarPanel calendarPanel;
-    private JTextField appointmentNameTextField, appointmentLocationTextField, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes, descriptionTextField;
+    private JTextField nameTextField, locationTextField, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes, descriptionTextField;
     private CalendarManager manager = new CalendarManager();
 
     /**
@@ -48,86 +48,69 @@ public class AppointmentPanel extends JPanel {
      */
     public void drawAppointmentPanel() {
 
-        // define appointment heading components
-        JLabel appointmentLabel = new JLabel("Add event");
-        JLabel dateLabel = new JLabel(calendarPanel.mainPanel.mainFrame.calendar.week.getWeekDayName(date)+" "+(month+1)+"/"+day+"/"+year);
+        // set layout
+        setLayout(new java.awt.GridLayout( 0,1 ));
+        setBorder(new EmptyBorder(15, 15, 15, 15));
 
-        // define appointment name components
-        JLabel appointmentNameLabel = new JLabel("Name");
-        appointmentNameLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        appointmentNameTextField = new JTextField();
-
-        // define appointment location components
-        JLabel appointmentLocationLabel = new JLabel("Location");
-        appointmentLocationLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        appointmentLocationTextField = new JTextField();
-
-        // define appointment time components
-        JLabel startTimeLabel = new JLabel("From");
-        JLabel endTimeLabel = new JLabel("Until");
-        startTimeLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        endTimeLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        startTimeHours = new JTextField();
-        startTimeHours.setPreferredSize(new Dimension(100, 45));
-        startTimeMinutes = new JTextField();
-        startTimeMinutes.setPreferredSize(new Dimension(100, 45));
-        endTimeHours = new JTextField();
-        endTimeHours.setPreferredSize(new Dimension(100, 45));
-        endTimeMinutes = new JTextField();
-        endTimeMinutes.setPreferredSize(new Dimension(100, 45));
-
-        // define appointment description components
+        JLabel nameLabel = new JLabel("Event");
+        JLabel startTimeLabel = new JLabel("Start-time");
+        JLabel endTimeLabel = new JLabel("End-time");
         JLabel descriptionLabel = new JLabel("Description");
-        descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        JLabel locationLabel = new JLabel("Location");
+
+        // define components
+        nameTextField = new JTextField();
+        locationTextField = new JTextField();
+        startTimeHours = new JTextField();
+        startTimeHours.setPreferredSize(new Dimension(178, 40));
+        startTimeMinutes = new JTextField();
+        startTimeMinutes.setPreferredSize(new Dimension(178, 40));
+        endTimeHours = new JTextField();
+        endTimeHours.setPreferredSize(new Dimension(178, 40));
+        endTimeMinutes = new JTextField();
+        endTimeMinutes.setPreferredSize(new Dimension(178, 40));
         descriptionTextField = new JTextField();
 
-        // define save-button
         JButton saveButton = new JButton("Save");
         saveButton.addActionListener(new saveAppointmentHandler());
+        saveButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel seperatorLabel1 = new JLabel(" : ");
+        seperatorLabel1.setPreferredSize(new Dimension(14, 40));
+        seperatorLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel seperatorLabel2 = new JLabel(" : ");
+        seperatorLabel2.setPreferredSize(new Dimension(14, 40));
+        seperatorLabel2.setHorizontalAlignment(SwingConstants.CENTER);
 
         // make time from panel and add components
         JPanel startTimePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
         startTimePanel.add(startTimeHours);
-        startTimePanel.add(new JLabel(" : "));
+        startTimePanel.add(seperatorLabel1);
         startTimePanel.add(startTimeMinutes);
 
         // make time until panel and add components
         JPanel endTimePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
         endTimePanel.add(endTimeHours);
-        endTimePanel.add(new JLabel(" : "));
+        endTimePanel.add(seperatorLabel2);
         endTimePanel.add(endTimeMinutes);
 
-        // make formpanel and add components
-        JPanel formPanel = new JPanel(new GridLayout(6,2));
-
-        formPanel.add(appointmentNameLabel);
-        formPanel.add(appointmentNameTextField);
-        formPanel.add(appointmentLocationLabel);
-        formPanel.add(appointmentLocationTextField);
-        formPanel.add(startTimeLabel);
-        formPanel.add(startTimePanel);
-        formPanel.add(endTimeLabel);
-        formPanel.add(endTimePanel);
-        formPanel.add(descriptionLabel);
-        formPanel.add(descriptionTextField);
-        formPanel.add(new JLabel(""));
-        formPanel.add(saveButton);
-        formPanel.setBorder(new EmptyBorder(20, 0, 0, 0));
-
-        // set layout
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        appointmentLabel.setAlignmentX(LEFT_ALIGNMENT);
-        appointmentLabel.setFont(new Font("Arial", Font.PLAIN, 30));
-        dateLabel.setAlignmentX(LEFT_ALIGNMENT);
-        dateLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        formPanel.setAlignmentX(LEFT_ALIGNMENT);
-        saveButton.setAlignmentX(LEFT_ALIGNMENT);
-        setBorder(new EmptyBorder(17, 17, 17, 17));
-
         // add components
-        add(appointmentLabel);
-        add(dateLabel);
-        add(formPanel);
+        add(appointmentNameLabel);
+        add(nameTextField);
+
+        add(locationLabel);
+        add(locationTextField);
+
+        add(startTimeLabel);
+        add(startTimePanel);
+
+        add(endTimeLabel);
+        add(endTimePanel);
+
+        add(descriptionLabel);
+        add(descriptionTextField);
+
+        add(saveButton);
     }
 
     /**
@@ -139,9 +122,9 @@ public class AppointmentPanel extends JPanel {
          * @param e
          */
         public void actionPerformed(ActionEvent e) {
-            String title = appointmentNameTextField.getText();
+            String title = nameTextField.getText();
             String description = descriptionTextField.getText();
-            String location = appointmentLocationTextField.getText();
+            String location = locationTextField.getText();
             Integer startTimeHours2 = Integer.parseInt(startTimeHours.getText());
             Integer startTimeMinutes2 = Integer.parseInt(startTimeMinutes.getText());
             Integer endTimeHours2 = Integer.parseInt(endTimeHours.getText());

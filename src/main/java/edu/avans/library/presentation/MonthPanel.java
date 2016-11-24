@@ -72,7 +72,7 @@ public class MonthPanel extends JPanel {
      * Sets the month-panel's dimensions.
      */
     private void setMonthPanelDimensions() {
-        monthPanelWidth = (int) (calendarPanel.getCalendarPanelWidth() * 0.75);
+        monthPanelWidth = (int) (calendarPanel.getCalendarPanelWidth() * 0.8);
         monthPanelHeight = calendarPanel.mainPanel.mainFrame.getContentPane().getHeight() - calendarPanel.mainPanel.getTopPanelHeight();
     }
 
@@ -164,7 +164,7 @@ public class MonthPanel extends JPanel {
                 year = calendarPanel.mainPanel.mainFrame.calendar.year.getNextYear();
             }
             for (int day = 1; day <= restCount; day++) {
-                dayPanelList.add(new DayPanel(day, month, year, calendarPanel,previousCount+mainCount+day));
+                dayPanelList.add(new DayPanel(day, month, year, calendarPanel, previousCount+mainCount+day));
             }
         }
     }

@@ -34,7 +34,7 @@ public class AppointmentDAO {
             if (connection.open()) {
                 // If a connection was successfully setup, execute the SELECT statement.
                 ResultSet resultset = connection.executeQuery(
-                        "SELECT * FROM appointment WHERE date = '" + dateString + "';");
+                        "SELECT * FROM appointment WHERE date = '" + dateString + "' ORDER BY startTime;");
 
                 if (resultset != null) {
                     try {

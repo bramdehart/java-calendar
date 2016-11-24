@@ -11,7 +11,7 @@ import javax.swing.*;
  * @see DayPanel
  */
 public class AppointmentFrame extends JFrame {
-    public Integer frameWidth = 600, frameHeight = 400;
+    public Integer frameWidth = 400, frameHeight = 600;
     private  AppointmentPanel appointmentPanel; // for now private
     private CalendarPanel calendarPanel;
     private Integer month, day, year;
@@ -31,7 +31,8 @@ public class AppointmentFrame extends JFrame {
      * Inits the frame.
      */
     private void initFrame(){
-        new JFrame("Add appointment");
+        new JFrame();
+        setTitle("Add Event - "+(month+1)+"/"+day+"/"+year);
         setResizable(false);
         setSize(frameWidth,frameHeight);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

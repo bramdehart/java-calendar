@@ -52,17 +52,37 @@ public class DayPanel extends JPanel {
         setBackgroundColor();
         setBorder();
 
+        JPanel dayTopPanel = new JPanel();
+        dayTopPanel.setBackground(new Color(0,0,0,0));
+        dayTopPanel.setLayout(new GridLayout(1,3));
+
+        // week number
         if (index % 7 == 1) {
             // first day of the week, show the weeknumber
-            JPanel firstDayPanel = new JPanel();
-            firstDayPanel.setLayout(new GridLayout(1,2));
-            firstDayPanel.add(getStyledWeekNumber(getWeekNumber()));
-            firstDayPanel.add(getStyledDayNumber(getDayNumber()));
-            add(firstDayPanel);
+            dayTopPanel.add(getStyledWeekNumber(getWeekNumber()));
         }
         else {
-            add(getStyledDayNumber(getDayNumber()));
+            dayTopPanel.add(new JLabel(""));
         }
+
+        // appointments count
+        Integer appointmentsCount = manager.getAppointments(date).size();
+
+        if (appointmentsCount > 0) {
+            JLabel appointmentsCountLabel = new JLabel(appointmentsCount.toString());
+            appointmentsCountLabel.setFont(new Font("Arial", Font.BOLD, 16));
+            appointmentsCountLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            appointmentsCountLabel.setForeground(Color.WHITE);
+            appointmentsCountLabel.setBackground(Color.decode("#FFBE00"));
+            appointmentsCountLabel.setOpaque(true);
+            dayTopPanel.add(appointmentsCountLabel);
+        }
+        else {
+            dayTopPanel.add(new JLabel(""));
+        }
+
+        // day number
+        dayTopPanel.add(getStyledDayNumber(getDayNumber()));
 
         viewAppointmentsButton = new JButton("View");
         viewAppointmentsButton.addActionListener(new viewAppointmentsButtonHandler());
@@ -71,6 +91,8 @@ public class DayPanel extends JPanel {
         
         viewAppointmentsButton.setOpaque(false);
         addAppointmentsButton.setOpaque(false);
+
+        add(dayTopPanel);
         add(addAppointmentsButton);
         add(viewAppointmentsButton);
     }
@@ -81,9 +103,33 @@ public class DayPanel extends JPanel {
     public void setBackgroundColor() {
         setBackground(Color.WHITE);
 
+        // styling on weekend days
         if (index % 7 == 0 || index % 7 == 1) {
             setBackground(Color.decode("#EEEEEE"));
         }
+
+        // styling if has appointments
+        if (!appointments.isEmpty()) {
+            setBackground(Color.decode("#55C63C"));
+        }
+
+        // current day styling
+        if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getCurrentMonth() &&
+            day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
+            year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
+        ) {
+            setBackground(Color.decode("#EF4A4A"));
+        }
+
+        // active day styling
+        if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth() &&
+            day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
+            year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
+        ) {
+            setBackground(Color.decode("#535F6E"));
+        }
+
+        setOpaque(true);
     }
 
     /**
@@ -112,10 +158,8 @@ public class DayPanel extends JPanel {
 
         // styling if has appointments
         if (!appointments.isEmpty()) {
-            dayLabel.setBackground(Color.decode("#55C63C"));
+            //dayLabel.setBackground(Color.decode("#55C63C"));
             dayLabel.setForeground(Color.WHITE);
-            dayLabel.setOpaque(true);
-
         }
 
         // current day styling
@@ -123,23 +167,19 @@ public class DayPanel extends JPanel {
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
         ) {
-            dayLabel.setBackground(Color.decode("#EF4A4A"));
+            //dayLabel.setBackground(Color.decode("#EF4A4A"));
             dayLabel.setForeground(Color.WHITE);
-            dayLabel.setOpaque(true);
-
         }
 
         // active day styling
         if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth() &&
                 day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
                 year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
-                ) {
-            dayLabel.setBackground(Color.decode("#535F6E"));
+        ) {
+            //dayLabel.setBackground(Color.decode("#535F6E"));
             dayLabel.setForeground(Color.WHITE);
-            dayLabel.setOpaque(true);
 
         }
-
 
         return dayLabel;
     }
@@ -166,10 +206,8 @@ public class DayPanel extends JPanel {
 
         // styling if has appointments
         if (!appointments.isEmpty()) {
-            weekLabel.setBackground(Color.decode("#55C63C"));
+            //weekLabel.setBackground(Color.decode("#55C63C"));
             weekLabel.setForeground(Color.WHITE);
-            weekLabel.setOpaque(true);
-
         }
 
         // current day styling
@@ -177,10 +215,8 @@ public class DayPanel extends JPanel {
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
         ) {
-            weekLabel.setBackground(Color.decode("#EF4A4A"));
+            //weekLabel.setBackground(Color.decode("#EF4A4A"));
             weekLabel.setForeground(Color.WHITE);
-            weekLabel.setOpaque(true);
-
         }
 
         // active day styling
@@ -188,10 +224,8 @@ public class DayPanel extends JPanel {
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
         ) {
-            weekLabel.setBackground(Color.decode("#535F6E"));
+            //weekLabel.setBackground(Color.decode("#535F6E"));
             weekLabel.setForeground(Color.WHITE);
-            weekLabel.setOpaque(true);
-
         }
 
         return weekLabel;
