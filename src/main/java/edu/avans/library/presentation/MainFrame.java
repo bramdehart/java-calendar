@@ -37,13 +37,14 @@ public class MainFrame extends JFrame {
         //setSize(frameWidth,frameHeight);
         setSize(1300,800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(1200, 675));
+        setMinimumSize(new Dimension(1280, 800));
 
         // add content to frame
         mainPanel = new MainPanel(MainFrame.this);
         setContentPane(mainPanel);
 
-        setResizable(false);
+        setResizable(true);
+        pack();
         setVisible(true);
     }
 

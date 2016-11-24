@@ -11,6 +11,8 @@ import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import edu.avans.library.businesslogic.CalendarManager;
+import edu.avans.library.presentation.SpringUtilities;
+
 
 /**
  * The <code>AppointmentPanel</code> ensures the panel of the <code>AppointmentFrame</code>.
@@ -24,7 +26,7 @@ public class AppointmentPanel extends JPanel {
     private Integer month, day, year;
     private Date date;
     private CalendarPanel calendarPanel;
-    private JTextField nameTextField, locationTextField, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes, descriptionTextField;
+    private JTextField nameTextField, locationTextField, startTime, endTime, descriptionTextField;
     private CalendarManager manager = new CalendarManager();
 
     /**
@@ -40,6 +42,7 @@ public class AppointmentPanel extends JPanel {
         this.year = year;
         this.calendarPanel = calendarPanel;
         this.date = calendarPanel.mainPanel.mainFrame.calendar.getDate(month, day, year);
+
         drawAppointmentPanel();
     }
 
@@ -49,68 +52,44 @@ public class AppointmentPanel extends JPanel {
     public void drawAppointmentPanel() {
 
         // set layout
-        setLayout(new java.awt.GridLayout( 0,1 ));
-        setBorder(new EmptyBorder(15, 15, 15, 15));
+        setLayout(new SpringLayout());
 
-        JLabel nameLabel = new JLabel("Event");
-        JLabel startTimeLabel = new JLabel("Start-time");
-        JLabel endTimeLabel = new JLabel("End-time");
-        JLabel descriptionLabel = new JLabel("Description");
-        JLabel locationLabel = new JLabel("Location");
+        // define labels
+        String[] labels = {"Name: ", "Location: ", "Starttime: ", "Endtime: ", "Description: "};
+        int numPairs = labels.length;
+
+        // fill the panel
+        int rows = 10;
+        int cols = 10;
+        for (int i = 0; i < numPairs; i++) {
+            JLabel l = new JLabel(labels[i], JLabel.TRAILING);
+            add(l);
+            JTextField textField = new JTextField(10);
+            l.setLabelFor(textField);
+            add(textField);
+        }
+
+        // lay out the panel.
+        SpringUtilities.makeCompactGrid(this,
+                numPairs, 2, //rows, cols
+                6, 6,        //initX, initY
+                6, 6);       //xPad, yPad
+
+
+
 
         // define components
         nameTextField = new JTextField();
         locationTextField = new JTextField();
-        startTimeHours = new JTextField();
-        startTimeHours.setPreferredSize(new Dimension(178, 40));
-        startTimeMinutes = new JTextField();
-        startTimeMinutes.setPreferredSize(new Dimension(178, 40));
-        endTimeHours = new JTextField();
-        endTimeHours.setPreferredSize(new Dimension(178, 40));
-        endTimeMinutes = new JTextField();
-        endTimeMinutes.setPreferredSize(new Dimension(178, 40));
+        startTime = new JTextField();
+        endTime = new JTextField();
         descriptionTextField = new JTextField();
 
         JButton saveButton = new JButton("Save");
         saveButton.addActionListener(new saveAppointmentHandler());
-        saveButton.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        JLabel seperatorLabel1 = new JLabel(" : ");
-        seperatorLabel1.setPreferredSize(new Dimension(14, 40));
-        seperatorLabel1.setHorizontalAlignment(SwingConstants.CENTER);
-        JLabel seperatorLabel2 = new JLabel(" : ");
-        seperatorLabel2.setPreferredSize(new Dimension(14, 40));
-        seperatorLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-
-        // make time from panel and add components
-        JPanel startTimePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        startTimePanel.add(startTimeHours);
-        startTimePanel.add(seperatorLabel1);
-        startTimePanel.add(startTimeMinutes);
-
-        // make time until panel and add components
-        JPanel endTimePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        endTimePanel.add(endTimeHours);
-        endTimePanel.add(seperatorLabel2);
-        endTimePanel.add(endTimeMinutes);
 
         // add components
-        add(appointmentNameLabel);
-        add(nameTextField);
-
-        add(locationLabel);
-        add(locationTextField);
-
-        add(startTimeLabel);
-        add(startTimePanel);
-
-        add(endTimeLabel);
-        add(endTimePanel);
-
-        add(descriptionLabel);
-        add(descriptionTextField);
-
-        add(saveButton);
+//       s
     }
 
     /**
@@ -125,43 +104,42 @@ public class AppointmentPanel extends JPanel {
             String title = nameTextField.getText();
             String description = descriptionTextField.getText();
             String location = locationTextField.getText();
-            Integer startTimeHours2 = Integer.parseInt(startTimeHours.getText());
-            Integer startTimeMinutes2 = Integer.parseInt(startTimeMinutes.getText());
-            Integer endTimeHours2 = Integer.parseInt(endTimeHours.getText());
-            Integer endTimeMinutes2 = Integer.parseInt(endTimeMinutes.getText());
+            //Integer startTime = Integer.parseInt(startTime.getText());
+            //Integer endTime = Integer.parseInt(endTime.getText());
+
             if (description.isEmpty()) { description = null; }
             if (location.isEmpty()) { location = null; }
 
-            // check input
-            if (title == null || title.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "The title of the event must be filled in.", "Invalid title", JOptionPane.ERROR_MESSAGE);
-            } else if (startTimeHours2 != (int)startTimeHours2 || startTimeMinutes2 != (int)startTimeMinutes2 || startTimeHours2 < 0 || startTimeHours2 > 23 || startTimeMinutes2 < 0 || startTimeMinutes2 > 60) {
-                JOptionPane.showMessageDialog(null, "The start time is invalid. Allowed format: (00 through 23) : (00 through 60).", "Invalid start time", JOptionPane.ERROR_MESSAGE);
-            } else if (endTimeHours2 != (int)endTimeHours2 || endTimeMinutes2 != (int)endTimeMinutes2 || endTimeHours2 < 0 || endTimeHours2 > 23 || endTimeMinutes2 < 0 || endTimeMinutes2 > 60) {
-                JOptionPane.showMessageDialog(null, "The end time is invalid. Allowed format: (00 through 23) : (00 through 60).", "Invalid end time", JOptionPane.ERROR_MESSAGE);
-            }
-            else {
-                Time startTime = null;
-                Time endTime = null;
-                DateFormat formatter = new SimpleDateFormat("HH:mm");
-
-                // format starttime
-                try {
-                    startTime = new Time(formatter.parse(startTimeHours2+":"+startTimeMinutes2).getTime());
-                } catch (ParseException e1) {
-                    e1.printStackTrace();
-                }
-
-                // format endtime
-                try {
-                    endTime = new Time(formatter.parse(endTimeHours2+":"+endTimeMinutes2).getTime());
-                } catch (ParseException e2) {
-                    e2.printStackTrace();
-                }
-
-                // add appointment
-                manager.addAppointment(date, title, description, location, startTime, endTime);
-            }
+//            // check input
+//            if (title == null || title.isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "The title of the event must be filled in.", "Invalid title", JOptionPane.ERROR_MESSAGE);
+//            } else if (startTimeHours2 != (int)startTimeHours2 || startTimeMinutes2 != (int)startTimeMinutes2 || startTimeHours2 < 0 || startTimeHours2 > 23 || startTimeMinutes2 < 0 || startTimeMinutes2 > 60) {
+//                JOptionPane.showMessageDialog(null, "The start time is invalid. Allowed format: (00 through 23) : (00 through 60).", "Invalid start time", JOptionPane.ERROR_MESSAGE);
+//            } else if (endTimeHours2 != (int)endTimeHours2 || endTimeMinutes2 != (int)endTimeMinutes2 || endTimeHours2 < 0 || endTimeHours2 > 23 || endTimeMinutes2 < 0 || endTimeMinutes2 > 60) {
+//                JOptionPane.showMessageDialog(null, "The end time is invalid. Allowed format: (00 through 23) : (00 through 60).", "Invalid end time", JOptionPane.ERROR_MESSAGE);
+//            }
+//            else {
+//                Time startTime = null;
+//                Time endTime = null;
+//                DateFormat formatter = new SimpleDateFormat("HH:mm");
+//
+//                // format starttime
+//                try {
+//                    startTime = new Time(formatter.parse(startTimeHours2+":"+startTimeMinutes2).getTime());
+//                } catch (ParseException e1) {
+//                    e1.printStackTrace();
+//                }
+//
+//                // format endtime
+//                try {
+//                    endTime = new Time(formatter.parse(endTimeHours2+":"+endTimeMinutes2).getTime());
+//                } catch (ParseException e2) {
+//                    e2.printStackTrace();
+//                }
+//
+//                // add appointment
+//                manager.addAppointment(date, title, description, location, startTime, endTime);
+//            }
         }
     }
 }
