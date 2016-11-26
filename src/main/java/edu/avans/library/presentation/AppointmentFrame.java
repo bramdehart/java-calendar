@@ -40,7 +40,7 @@ public class AppointmentFrame extends JFrame {
         setAlwaysOnTop(true);
 
         // add content to frame
-        appointmentPanel = new AppointmentPanel(month, day, year, calendarPanel);
+        appointmentPanel = new AppointmentPanel(month, day, year, calendarPanel, this);
         setContentPane(appointmentPanel);
         setVisible(true);
     }
