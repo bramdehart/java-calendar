@@ -270,7 +270,10 @@ public class DayPanel extends JPanel {
          * @param e
          */
         public void actionPerformed(ActionEvent e) {
-            new AppointmentFrame(month, day, year, calendarPanel);
+            Integer offsetX = getLocationOnScreen().x;
+            Integer offsetY = getLocationOnScreen().y;
+
+            new AppointmentFrame(month, day, year, calendarPanel, offsetX, offsetY);
         }
     }
 }

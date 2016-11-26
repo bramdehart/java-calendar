@@ -26,7 +26,7 @@ public class AppointmentPanel extends JPanel {
     private Integer month, day, year;
     private Date date;
     private CalendarPanel calendarPanel;
-    private JTextField nameTextField, locationTextField, startTime, endTime, descriptionTextField;
+    private JTextField nameTextField, locationTextField, startTimeTextField, endTimeTextField, notesTextField;
     private CalendarManager manager = new CalendarManager();
 
     /**
@@ -55,41 +55,75 @@ public class AppointmentPanel extends JPanel {
         setLayout(new SpringLayout());
 
         // define labels
-        String[] labels = {"Name: ", "Location: ", "Starttime: ", "Endtime: ", "Description: "};
+        String[] labels = {"Name", "Location", "Starttime", "Endtime", "Notes", ""};
         int numPairs = labels.length;
 
+        // button
+        JButton saveButton = new JButton("Save");
+        saveButton.setPreferredSize(new Dimension(200,40));
+        saveButton.addActionListener(new saveAppointmentHandler());
+
         // fill the panel
-        int rows = 10;
-        int cols = 10;
         for (int i = 0; i < numPairs; i++) {
             JLabel l = new JLabel(labels[i], JLabel.TRAILING);
             add(l);
-            JTextField textField = new JTextField(10);
-            l.setLabelFor(textField);
-            add(textField);
+
+            if (i+1 < numPairs) {
+                // textfields
+                JTextField textField = new JTextField(10);
+                l.setLabelFor(textField);
+                add(textField);
+            }
+            else {
+                // button
+                add(saveButton);
+            }
         }
+
+
+
+        // define labels
+//        JLabel nameLabel = new JLabel("Name");
+//        JLabel locationLabel = new JLabel("Location");
+//        JLabel startTimeLabel = new JLabel("Starttime");
+//        JLabel endTimeLabel = new JLabel("Endtime");
+//        JLabel notesLabel = new JLabel("Notes");
+
+        // define textfields
+//        nameTextField = new JTextField();
+//        locationTextField = new JTextField();
+//        startTimeTextField = new JTextField();
+//        endTimeTextField = new JTextField();
+//        notesTextField = new JTextField();
+
+        // bind labels / textfields
+//        nameLabel.setLabelFor(nameTextField);
+//        locationLabel.setLabelFor(locationTextField);
+//        startTimeLabel.setLabelFor(startTimeTextField);
+//        endTimeLabel.setLabelFor(endTimeTextField);
+//        notesLabel.setLabelFor(notesTextField);
+
+        // add labels
+//        add(nameLabel);
+//        add(locationLabel);
+//        add(startTimeLabel);
+//        add(endTimeLabel);
+//        add(notesLabel);
+
+        // add labels
+//        add(nameLabel, nameTextField);
+//        add(locationLabel, locationTextField);
+//        add(startTimeLabel, startTimeTextField);
+//        add(endTimeLabel, endTimeTextField);
+//        add(notesLabel, notesTextField);
 
         // lay out the panel.
         SpringUtilities.makeCompactGrid(this,
-                numPairs, 2, //rows, cols
-                6, 6,        //initX, initY
-                6, 6);       //xPad, yPad
+            numPairs, 2,   //rows, cols
+            10, 10,   //initX, initY
+            10, 10    //xPad, yPad
+        );
 
-
-
-
-        // define components
-        nameTextField = new JTextField();
-        locationTextField = new JTextField();
-        startTime = new JTextField();
-        endTime = new JTextField();
-        descriptionTextField = new JTextField();
-
-        JButton saveButton = new JButton("Save");
-        saveButton.addActionListener(new saveAppointmentHandler());
-
-        // add components
-//       s
     }
 
     /**
@@ -101,13 +135,13 @@ public class AppointmentPanel extends JPanel {
          * @param e
          */
         public void actionPerformed(ActionEvent e) {
-            String title = nameTextField.getText();
-            String description = descriptionTextField.getText();
+            String name = nameTextField.getText();
+            String notes = notesTextField.getText();
             String location = locationTextField.getText();
             //Integer startTime = Integer.parseInt(startTime.getText());
             //Integer endTime = Integer.parseInt(endTime.getText());
 
-            if (description.isEmpty()) { description = null; }
+            if (notes.isEmpty()) { notes = null; }
             if (location.isEmpty()) { location = null; }
 
 //            // check input
