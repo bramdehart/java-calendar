@@ -37,7 +37,7 @@ public class AppointmentFrame extends JFrame {
         setSize(frameWidth,frameHeight);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocation(offsetX, offsetY);
-        setAlwaysOnTop(true);
+        //setAlwaysOnTop(true);
 
         // add content to frame
         appointmentPanel = new AppointmentPanel(month, day, year, calendarPanel, this);

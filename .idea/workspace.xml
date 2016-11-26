@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="428955a9-26b9-4642-8a9c-55d910eada19" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel$saveAppointmentHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel$saveAppointmentHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel$saveAppointmentHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel$addAppointmentsButtonHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel$addAppointmentsButtonHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel$viewAppointmentsButtonHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel$viewAppointmentsButtonHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java-Calendar.iml" afterPath="$PROJECT_DIR$/Java-Calendar.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
     </list>
     <ignored path="Java-Calendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DayDetailPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DayDetailPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="193">
+              <caret line="115" column="55" selection-start-line="115" selection-start-column="55" selection-end-line="115" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,21 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppointmentDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/AppointmentDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DayPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3330">
-              <caret line="275" column="23" selection-start-line="275" selection-start-column="23" selection-end-line="275" selection-end-column="23" />
+            <state relative-caret-position="190">
+              <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppointmentPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppointmentPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1528">
-              <caret line="197" column="18" selection-start-line="197" selection-start-column="18" selection-end-line="197" selection-end-column="18" />
+            <state relative-caret-position="235">
+              <caret line="110" column="133" selection-start-line="110" selection-start-column="133" selection-end-line="110" selection-end-column="133" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,16 +103,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
               <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="278" column="19" selection-start-line="278" selection-start-column="19" selection-end-line="278" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -134,8 +121,8 @@
       <file leaf-file-name="AppointmentFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state relative-caret-position="240">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -202,14 +189,14 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/AppointmentDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/SpringUtilities/java.kt" />
         <option value="$PROJECT_DIR$/src/layout/java/SpringUtilities.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/SpringUtilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" />
       </list>
     </option>
   </component>
@@ -324,6 +311,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -399,6 +394,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation" />
       <recent name="$PROJECT_DIR$/src/layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -869,12 +865,12 @@
       <workItem from="1477434771488" duration="30560000" />
       <workItem from="1478963310167" duration="5930000" />
       <workItem from="1479844663345" duration="12802000" />
-      <workItem from="1480002412014" duration="40026000" />
+      <workItem from="1480002412014" duration="46571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306120000" />
+    <option name="totallyTimeSpent" value="312665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -891,20 +887,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756758" sideWeight="0.47720042" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756758" sideWeight="0.47507954" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.53605515" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.5402969" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.46394485" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.4597031" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.119830325" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20254506" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762313" sideWeight="0.49375" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756758" sideWeight="0.49151644" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4957537" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -939,14 +935,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1193,28 +1181,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1237,20 +1207,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/image/appointment-label-background.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3330">
-          <caret line="275" column="23" selection-start-line="275" selection-start-column="23" selection-end-line="275" selection-end-column="23" />
+        <state relative-caret-position="190">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1528">
-          <caret line="197" column="18" selection-start-line="197" selection-start-column="18" selection-end-line="197" selection-end-column="18" />
+        <state relative-caret-position="235">
+          <caret line="110" column="133" selection-start-line="110" selection-start-column="133" selection-end-line="110" selection-end-column="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="115" column="55" selection-start-line="115" selection-start-column="55" selection-end-line="115" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

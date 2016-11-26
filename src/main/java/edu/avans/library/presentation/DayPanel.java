@@ -7,6 +7,7 @@ import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -24,6 +25,7 @@ public class DayPanel extends JPanel {
     public ArrayList<Appointment> appointments;
     private Date date;
     private CalendarManager manager = new CalendarManager();
+    private Integer appointmentsCount;
 
     /**
      * Constructor. Initializes a day-panel.
@@ -41,6 +43,8 @@ public class DayPanel extends JPanel {
         this.index = index;
         date = calendarPanel.mainPanel.mainFrame.calendar.getDate(month, day, year);
         appointments = manager.getAppointments(date);
+        appointmentsCount = appointments.size();
+
         drawDayPanel();
     }
 
@@ -65,15 +69,12 @@ public class DayPanel extends JPanel {
             dayTopPanel.add(new JLabel(""));
         }
 
-        // appointments count
-        Integer appointmentsCount = manager.getAppointments(date).size();
-
         if (appointmentsCount > 0) {
             JLabel appointmentsCountLabel = new JLabel(appointmentsCount.toString());
             appointmentsCountLabel.setFont(new Font("Arial", Font.BOLD, 16));
             appointmentsCountLabel.setHorizontalAlignment(SwingConstants.CENTER);
             appointmentsCountLabel.setForeground(Color.WHITE);
-            appointmentsCountLabel.setBackground(Color.decode("#FFBE00"));
+            appointmentsCountLabel.setBackground(new Color(0,0,0,50));
             appointmentsCountLabel.setOpaque(true);
             dayTopPanel.add(appointmentsCountLabel);
         }
@@ -88,7 +89,6 @@ public class DayPanel extends JPanel {
         viewAppointmentsButton.addActionListener(new viewAppointmentsButtonHandler());
         addAppointmentsButton = new JButton("Add");
         addAppointmentsButton.addActionListener(new addAppointmentsButtonHandler());
-        
         viewAppointmentsButton.setOpaque(false);
         addAppointmentsButton.setOpaque(false);
 
@@ -98,35 +98,52 @@ public class DayPanel extends JPanel {
     }
 
     /**
+     * Returns a color code based on the appointments counts.
+     * @param appointmentsCount the total appointments of a day
+     * @return the color code
+     */
+    private String getAppointmentsBackground(Integer appointmentsCount) {
+        String backgroundHash = "#FFB312";
+        if (appointmentsCount > 5) {
+            backgroundHash = "#FF6600";
+            if (appointmentsCount > 10) {
+                backgroundHash = "#EE3230";
+            }
+        }
+
+        return backgroundHash;
+    }
+
+    /**
      * Sets the background color based on the week day.
      */
     public void setBackgroundColor() {
         setBackground(Color.WHITE);
 
-        // styling on weekend days
+        // weekend day
         if (index % 7 == 0 || index % 7 == 1) {
             setBackground(Color.decode("#EEEEEE"));
         }
 
-        // styling if has appointments
-        if (!appointments.isEmpty()) {
-            setBackground(Color.decode("#55C63C"));
-        }
-
-        // current day styling
+        // current day
         if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getCurrentMonth() &&
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
         ) {
-            setBackground(Color.decode("#EF4A4A"));
+            setBackground(Color.decode("#1DA04A"));
         }
 
-        // active day styling
+        // appointments
+        if (appointmentsCount > 0) {
+            setBackground(Color.decode(getAppointmentsBackground(appointmentsCount)));
+        }
+
+        // active day
         if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth() &&
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
         ) {
-            setBackground(Color.decode("#535F6E"));
+            setBackground(Color.decode("#2E78F2"));
         }
 
         setOpaque(true);
@@ -156,29 +173,16 @@ public class DayPanel extends JPanel {
             dayLabel.setForeground(Color.decode("#BBBBBB"));
         }
 
-        // styling if has appointments
-        if (!appointments.isEmpty()) {
-            //dayLabel.setBackground(Color.decode("#55C63C"));
-            dayLabel.setForeground(Color.WHITE);
-        }
-
-        // current day styling
+        // current day, active day and days with appointments
         if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getCurrentMonth() &&
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
-            year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
+            year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear() ||
+            month == calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth() &&
+            day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
+            year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear() ||
+            appointmentsCount > 0
         ) {
-            //dayLabel.setBackground(Color.decode("#EF4A4A"));
             dayLabel.setForeground(Color.WHITE);
-        }
-
-        // active day styling
-        if (month == calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth() &&
-                day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
-                year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
-        ) {
-            //dayLabel.setBackground(Color.decode("#535F6E"));
-            dayLabel.setForeground(Color.WHITE);
-
         }
 
         return dayLabel;
@@ -206,7 +210,6 @@ public class DayPanel extends JPanel {
 
         // styling if has appointments
         if (!appointments.isEmpty()) {
-            //weekLabel.setBackground(Color.decode("#55C63C"));
             weekLabel.setForeground(Color.WHITE);
         }
 
@@ -215,7 +218,6 @@ public class DayPanel extends JPanel {
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getCurrentDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getCurrentYear()
         ) {
-            //weekLabel.setBackground(Color.decode("#EF4A4A"));
             weekLabel.setForeground(Color.WHITE);
         }
 
@@ -224,7 +226,6 @@ public class DayPanel extends JPanel {
             day == calendarPanel.mainPanel.mainFrame.calendar.day.getActiveDay() &&
             year == calendarPanel.mainPanel.mainFrame.calendar.year.getActiveYear()
         ) {
-            //weekLabel.setBackground(Color.decode("#535F6E"));
             weekLabel.setForeground(Color.WHITE);
         }
 

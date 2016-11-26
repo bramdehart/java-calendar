@@ -110,7 +110,8 @@ public class DayDetailPanel extends JPanel {
 
         // set bounds
         scrollPane.setBounds(0,mainPanel.getTopPanelHeight(),dayDetailPanelWidth, dayDetailPanelHeight - mainPanel.getTopPanelHeight());
-        scrollPane.setOpaque(true); //?
+        scrollPane.setOpaque(true);
+        scrollPane.getVerticalScrollBar().setUnitIncrement(25);
 
         Integer appointmentsSize = appointments.size();
 
@@ -127,7 +128,6 @@ public class DayDetailPanel extends JPanel {
                 startTime = startTime.substring(0, startTime.length() - 3);
                 String endTime = appointment.endTime.toString();
                 endTime = endTime.substring(0, endTime.length() - 3);
-
 
                 JLabel time = new JLabel(startTime+" - "+endTime);
                 time.setFont(new Font("Arial", Font.PLAIN, 14));

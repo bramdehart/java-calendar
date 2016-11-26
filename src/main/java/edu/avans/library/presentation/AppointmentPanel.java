@@ -48,7 +48,7 @@ public class AppointmentPanel extends JPanel {
      */
     public void drawAppointmentPanel() {
         setLayout(new SpringLayout());
-        String[] labels = {"Name", "Location", "Starttime", "Endtime", "Notes", ""};
+        String[] labels = {"Name", "Location", "Start time", "End time", "Notes", ""};
         int numPairs = labels.length;
 
         JButton saveButton = new JButton("Save");
@@ -96,17 +96,20 @@ public class AppointmentPanel extends JPanel {
      * Shows an message dialog when the name of an event isn't filled in.
      */
     private void showNameError() {
-       JOptionPane.showMessageDialog(null, "The title of the event must be filled in.", "Invalid title", JOptionPane.ERROR_MESSAGE);
+       JOptionPane.showMessageDialog(null, "The name of the event must be filled in.", "Invalid name", JOptionPane.ERROR_MESSAGE);
     }
 
     private void showTimeError() {
-       JOptionPane.showMessageDialog(null,
+        JOptionPane.showMessageDialog(null,
                "The start time or end time are invalid.\n" +
                "Allowed format: (00 through 23) : (00 through 59).\n" +
                "End time must be greater than start time.", "Invalid times",
        JOptionPane.ERROR_MESSAGE);
     }
 
+    private void showSuccesMessage(String name) {
+        JOptionPane.showMessageDialog(null, "Your event \""+name+"\" is succesfully added.", "Event added", JOptionPane.PLAIN_MESSAGE);
+    }
 
     /**
      * Sets the global formatted time variables, based on a time string
@@ -191,9 +194,9 @@ public class AppointmentPanel extends JPanel {
                 // close frame
                 appointmentFrame.setVisible(false);
                 appointmentFrame.dispose();
-                // repaint panels
+                // repaint panels and show succes message
                 calendarPanel.monthPanel.redrawMonthPanel();
-
+                showSuccesMessage(name);
             }
             else {
                 // show errors
