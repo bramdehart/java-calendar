@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -120,7 +122,6 @@ public class DayDetailPanel extends JPanel {
                 JPanel appointmentPanel = new JPanel();
                 appointmentPanel.setLayout(new BoxLayout(appointmentPanel, BoxLayout.Y_AXIS));
                 appointmentPanel.setBorder(new EmptyBorder(12, 12, 12, 12));
-
                 Appointment appointment = appointments.get(i);
 
                 // format times
@@ -139,15 +140,20 @@ public class DayDetailPanel extends JPanel {
                 JLabel description = new JLabel("Notes: "+appointment.description);
                 description.setFont(new Font("Arial", Font.PLAIN, 14));
 
+                // delete button TODO fix dimensions
+                JButton deleteButton = new JButton("Delete");
+                deleteButton.setMinimumSize(new Dimension(115,40));
+                deleteButton.setMaximumSize(new Dimension(115,40));
+                deleteButton.addActionListener(new deleteAppointmentHandler(appointment.appointmentId, appointment.title));
+
                 appointmentPanel.add(time);
                 appointmentPanel.add(title);
                 appointmentPanel.add(location);
                 appointmentPanel.add(description);
+                appointmentPanel.add(deleteButton);
 
                 appointmentsPanel.add(appointmentPanel);
             }
-
-
         }
         else {
             JLabel noResultsLabel = new JLabel("No events found");
@@ -157,5 +163,38 @@ public class DayDetailPanel extends JPanel {
         }
 
         add(scrollPane);
+    }
+
+    /**
+     * Inner class. Triggers an actionlistener when a delete button is clicked.
+     */
+    class deleteAppointmentHandler implements ActionListener {
+        private Integer appointmentId;
+        private String appointmentName;
+
+        /**
+         * Constructor, stores the appointment ID.
+         * @param appointmentId
+         */
+        public deleteAppointmentHandler(Integer appointmentId, String appointmentName) {
+            this.appointmentId = appointmentId;
+            this.appointmentName = appointmentName;
+        }
+
+        /**
+         * Deletes an appointment based on an appointment id
+         * @param e
+         */
+        public void actionPerformed(ActionEvent e) {
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the event \""+appointmentName+"\"?", "Delete event", JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                // delete appointment
+                manager.deleteAppointment(appointmentId);
+                // redraw panels
+                mainPanel.calendarPanel.monthPanel.redrawMonthPanel();
+                mainPanel.dayDetailPanel.redrawDayDetailPanel();
+            }
+        }
     }
 }

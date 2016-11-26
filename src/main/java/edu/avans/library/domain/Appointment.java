@@ -13,7 +13,7 @@ import java.sql.Time;
  */
 
 public class Appointment {
-    private Integer appointmentId;
+    public Integer appointmentId;
     public String title, description, location;
     private Date date;
     public Time startTime, endTime;

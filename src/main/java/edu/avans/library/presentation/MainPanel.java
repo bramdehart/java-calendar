@@ -26,7 +26,7 @@ public class MainPanel extends JPanel {
     private Integer topPanelWidth;
     private JButton prevMonthButton, nextMonthButton, currentMonthButton;
     private JPanel topPanel, navigationButtonPanel; // for now private
-    private CalendarPanel calendarPanel; // for now private
+    public CalendarPanel calendarPanel;
     public DayDetailPanel dayDetailPanel;
     public MainFrame mainFrame;
     private JLabel sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel, thursdayLabel, fridayLabel, saturdayLabel, monthYearLabel;
@@ -220,7 +220,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * Inner clas. Triggers an actionlistener when previous button is clicked.
+     * Inner class. Triggers an actionlistener when previous button is clicked.
      */
     class prevMonthButtonHandler implements ActionListener {
         /**
@@ -237,7 +237,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * Inner clas. Triggers an actionlistener when next button is clicked.
+     * Inner class. Triggers an actionlistener when next button is clicked.
      */
     class nextMonthButtonHandler implements ActionListener {
         /**
@@ -254,7 +254,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * Inner clas. Triggers an actionlistener when current button is clicked.
+     * Inner class. Triggers an actionlistener when current button is clicked.
      */
     class currentMonthButtonHandler implements ActionListener {
         /**
@@ -271,7 +271,7 @@ public class MainPanel extends JPanel {
     }
 
     /**
-     * Inner clas. Triggers an actionlistener when current datefield is entered.
+     * Inner class. Triggers an actionlistener when current datefield is entered.
      */
     class dateFieldHandler implements ActionListener {
         /**
@@ -295,6 +295,11 @@ public class MainPanel extends JPanel {
                 repaint();
             }
             else {
+                // show message dialog
+                JOptionPane.showMessageDialog(null,
+                    "The entered date invalid.\n" +
+                    "Allowed format: mm/dd/yyyy.",
+                "Invalid date", JOptionPane.ERROR_MESSAGE);
              }
         }
     }

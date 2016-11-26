@@ -101,7 +101,7 @@ public class AppointmentDAO {
             // First open a database connnection
             if (connection.open()) {
                 // If a connection was successfully setup, execute the statement.
-                result = connection.execute("DELETE FROM appointment WHERE appointmentId = '"+appointmentId+"';");
+                result = connection.execute("DELETE FROM appointment WHERE id = '"+appointmentId+"';");
             }
 
             // We had a database connection opened. Since we're finished,
