@@ -6,7 +6,6 @@ import javax.swing.*;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 /**
  * The <code>MainFrame</code> ensures the main window of the calendar application.
@@ -90,6 +89,10 @@ public class MainFrame extends JFrame {
         }
     }
 
+    /**
+     * Draws a menubar in the <code>MainFrame</code>.
+     * @return
+     */
     private JMenuBar getCustomMenuBar() {
         JMenuBar menuBar = new JMenuBar();
 

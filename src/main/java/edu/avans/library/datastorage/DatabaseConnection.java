@@ -55,7 +55,6 @@ public class DatabaseConnection {
 
     /**
      * Checks if the connection is currently open.
-     *
      * @return true if open; otherwise, false.
      */
     public boolean isOpen() {
@@ -73,7 +72,6 @@ public class DatabaseConnection {
 
     /**
      * Closes the connection.
-     *
      * @return true if successful; otherwise, false.
      */
     public boolean close() {
@@ -93,7 +91,6 @@ public class DatabaseConnection {
 
     /**
      * Executes SQL that does not return any results.
-     *
      * @param sql The sql to be executed
      * @return true if successful; otherwise, false.
      */
@@ -109,7 +106,6 @@ public class DatabaseConnection {
 
     /**
      * Executes SQL that does not return any results.
-     *
      * @param sql The sql to be executed
      * @return true if successful; otherwise, false.
      */
@@ -128,7 +124,6 @@ public class DatabaseConnection {
 
     /**
      * Executes an SQL query that returns results.
-     *
      * @param sql The sql to be executed
      * @return The result set returned by the query.
      */
@@ -144,7 +139,6 @@ public class DatabaseConnection {
 
     /**
      * Creates and executes an SQL string by placing the specified items into the SQL format string and returns the generated keys.
-     *
      * @param sqlFormat The SQL string to place the items in.
      * @param items     The items to place into the SQL format string.
      * @return The generated keys as an integer List.
@@ -177,7 +171,6 @@ public class DatabaseConnection {
 
     /**
      * Creates and executes an SQL string for each set of items in the specified batch by placing the specified items into the SQL format string and returns the number of affected rows.
-     *
      * @param sqlFormat The SQL string to place the items in.
      * @param batch     The batch with item collections to place in the SQL string.
      * @return The number of affected rows as an integer List.

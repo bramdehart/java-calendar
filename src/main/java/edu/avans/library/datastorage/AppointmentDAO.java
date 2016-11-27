@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.sql.Time;
 import java.util.List;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.avans.library.domain.Appointment;
 
 /**
@@ -21,6 +19,7 @@ import edu.avans.library.domain.Appointment;
  */
 public class AppointmentDAO {
     private DatabaseConnection connection = new DatabaseConnection("jdbc:mysql://127.0.0.1/javaCalendar", "root","root");
+
     /**
      * Gets all appointments of a given date.
      * @param date the date the appointments needs to be retrieved from
@@ -81,7 +80,8 @@ public class AppointmentDAO {
             // First open a database connnection
             if (connection.open()) {
                 // If a connection was successfully setup, execute the statement.
-                resultIds = connection.executePrepared("INSERT INTO appointment (title, description, location, date, startTime, endTime) VALUES(?,?,?,?,?,?);", title,description,location,date,startTime,endTime);
+                resultIds = connection.executePrepared("INSERT INTO appointment (title, description, location, date, startTime, endTime) VALUES(?,?,?,?,?,?);",
+                        title,description,location,date,startTime,endTime);
             }
 
             // We had a database connection opened. Since we're finished,

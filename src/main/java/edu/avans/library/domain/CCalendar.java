@@ -137,10 +137,6 @@ public class CCalendar {
      */
     public Date getDate(Integer month, Integer day, Integer year) {
         SimpleDateFormat formatter = new SimpleDateFormat("M/d/yyyy");
-//        System.out.println(month);
-//        System.out.println(day);
-//        System.out.println(year);
-
         String dateString = (month+1)+"/"+day+"/"+year;
         Date date = new Date();
 

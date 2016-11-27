@@ -2,7 +2,6 @@ package edu.avans.library.presentation;
 import edu.avans.library.businesslogic.CalendarManager;
 import edu.avans.library.domain.CCalendar;
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * The <code>CalendarPanel</code> ensures the panel in which the calendar user-interface will be placed.

@@ -1,7 +1,7 @@
 package edu.avans.library.businesslogic;
+
 import edu.avans.library.datastorage.*;
 import edu.avans.library.domain.Appointment;
-
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;

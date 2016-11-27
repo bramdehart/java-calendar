@@ -99,6 +99,9 @@ public class AppointmentPanel extends JPanel {
        JOptionPane.showMessageDialog(null, "The name of the event must be filled in.", "Invalid name", JOptionPane.ERROR_MESSAGE);
     }
 
+    /**
+     * Show an message dialog when the filled in times aren't valid.
+     */
     private void showTimeError() {
         JOptionPane.showMessageDialog(null,
                "The start time or end time are invalid.\n" +
@@ -107,6 +110,10 @@ public class AppointmentPanel extends JPanel {
        JOptionPane.ERROR_MESSAGE);
     }
 
+    /**
+     * Shows an message dialog when an event is succesfully added.
+     * @param name the name of the event.
+     */
     private void showSuccesMessage(String name) {
         JOptionPane.showMessageDialog(null, "Your event \""+name+"\" is succesfully added.", "Event added", JOptionPane.PLAIN_MESSAGE);
     }
@@ -156,7 +163,6 @@ public class AppointmentPanel extends JPanel {
          * @param e
          */
         public void actionPerformed(ActionEvent e) {
-            // validation booleans
             Boolean validName = true;
             Boolean validTimes = true;
 
@@ -175,12 +181,10 @@ public class AppointmentPanel extends JPanel {
             if (name == null || name.isEmpty()) {
                 validName = false;
             }
-
             // validate times
             if (!setFormattedTime(startTime, 0) || !setFormattedTime(endTime, 1)) {
                 validTimes = false;
             }
-
             if (validTimes) {
                 // is end time greater then start time
                 if (Integer.parseInt(startTime.replaceAll("[^\\d]","")) > Integer.parseInt(endTime.replaceAll("[^\\d]",""))) {

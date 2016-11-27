@@ -2,7 +2,6 @@ package edu.avans.library.presentation;
 
 import edu.avans.library.businesslogic.CalendarManager;
 import edu.avans.library.domain.Appointment;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
@@ -105,6 +104,9 @@ public class DayDetailPanel extends JPanel {
         repaint();
     }
 
+    /**
+     * Draws each appointment with it's contents in the panel.
+     */
     private void drawAppointments() {
         JPanel appointmentsPanel = new JPanel();
         appointmentsPanel.setLayout(new BoxLayout(appointmentsPanel, BoxLayout.Y_AXIS));
@@ -144,7 +146,6 @@ public class DayDetailPanel extends JPanel {
                 endTime = endTime.substring(0, endTime.length() - 3);
 
                 Border labelBorder = new EmptyBorder(2,0,2,0);
-
                 JLabel time = new JLabel(startTime+" - "+endTime);
                 time.setFont(new Font("Arial", Font.PLAIN, 16));
                 time.setBorder(new EmptyBorder(0,0,10,0));

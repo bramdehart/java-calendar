@@ -233,7 +233,7 @@ public class DayPanel extends JPanel {
     }
 
     /**
-     * Sets the border of a daypanel.
+     * Sets the border of the daypanel.
      */
     public void setBorder() {
         setBorder(BorderFactory.createMatteBorder(1, 1, 0, 0, Color.decode("#E2E2E2")));

@@ -3,14 +3,10 @@ import edu.avans.library.businesslogic.CalendarManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 /**
  * The <code>MainPanel</code> ensures the main panel of the calendar application.
@@ -79,7 +75,7 @@ public class MainPanel extends JPanel {
         navigationButtonPanel.setBackground(Color.WHITE);
         navigationButtonPanel.setLayout(new GridLayout());
 
-        // day labels
+        // weekday labels
         sundayLabel = new JLabel("Sun", SwingConstants.RIGHT);
         sundayLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         mondayLabel = new JLabel("Mon", SwingConstants.RIGHT);
