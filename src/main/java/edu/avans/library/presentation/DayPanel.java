@@ -170,7 +170,7 @@ public class DayPanel extends JPanel {
 
         // days that aren't in the active month
         if (month != calendarPanel.mainPanel.mainFrame.calendar.month.getActiveMonth()) {
-            dayLabel.setForeground(Color.decode("#BBBBBB"));
+            dayLabel.setForeground(Color.decode("#B5B5B5"));
         }
 
         // current day, active day and days with appointments

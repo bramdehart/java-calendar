@@ -44,6 +44,7 @@ public class DayDetailPanel extends JPanel {
      */
     private void drawDayDetailPanel() {
         setLayout(null);
+        setBackground(Color.WHITE);
         setDayDetailPanelDimensions();
         setDayDetailPanelBounds();
 
@@ -124,6 +125,15 @@ public class DayDetailPanel extends JPanel {
                 appointmentPanel.setBorder(new EmptyBorder(12, 12, 12, 12));
                 Appointment appointment = appointments.get(i);
 
+                Boolean hasLocation = true;
+                Boolean hasDescription = true;
+                if (appointment.location == null) {
+                    hasLocation = false;
+                }
+                if (appointment.description == null) {
+                    hasDescription = false;
+                }
+
                 // format times
                 String startTime = appointment.startTime.toString();
                 startTime = startTime.substring(0, startTime.length() - 3);
@@ -131,8 +141,9 @@ public class DayDetailPanel extends JPanel {
                 endTime = endTime.substring(0, endTime.length() - 3);
 
                 JLabel time = new JLabel(startTime+" - "+endTime);
-                time.setFont(new Font("Arial", Font.PLAIN, 14));
+                time.setFont(new Font("Arial", Font.PLAIN, 16));
                 time.setBorder(new EmptyBorder(0,0,10,0));
+                time.setForeground(Color.decode("#909090"));
                 JLabel title = new JLabel("Name: "+appointment.title);
                 title.setFont(new Font("Arial", Font.PLAIN, 14));
                 JLabel location = new JLabel("Location: "+appointment.location);
@@ -140,16 +151,20 @@ public class DayDetailPanel extends JPanel {
                 JLabel description = new JLabel("Notes: "+appointment.description);
                 description.setFont(new Font("Arial", Font.PLAIN, 14));
 
-                // delete button TODO fix dimensions
+                // delete button
                 JButton deleteButton = new JButton("Delete");
-                deleteButton.setMinimumSize(new Dimension(115,40));
-                deleteButton.setMaximumSize(new Dimension(115,40));
                 deleteButton.addActionListener(new deleteAppointmentHandler(appointment.appointmentId, appointment.title));
+                deleteButton.setMargin(new Insets(7, 33, 7, 33));
 
                 appointmentPanel.add(time);
                 appointmentPanel.add(title);
-                appointmentPanel.add(location);
-                appointmentPanel.add(description);
+                if (hasLocation) {
+                    appointmentPanel.add(location);
+                }
+                if (hasDescription) {
+                    appointmentPanel.add(description);
+                }
+                appointmentPanel.add(new JLabel(" ")); // some spacing
                 appointmentPanel.add(deleteButton);
 
                 appointmentsPanel.add(appointmentPanel);
