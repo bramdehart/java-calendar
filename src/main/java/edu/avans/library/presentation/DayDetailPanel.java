@@ -4,6 +4,7 @@ import edu.avans.library.businesslogic.CalendarManager;
 import edu.avans.library.domain.Appointment;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import java.awt.*;
@@ -107,13 +108,14 @@ public class DayDetailPanel extends JPanel {
     private void drawAppointments() {
         JPanel appointmentsPanel = new JPanel();
         appointmentsPanel.setLayout(new BoxLayout(appointmentsPanel, BoxLayout.Y_AXIS));
+        appointmentsPanel.setBackground(Color.WHITE);
+        appointmentsPanel.setOpaque(true);
 
         scrollPane = new JScrollPane(appointmentsPanel);
         scrollPane.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.decode("#E2E2E2")));
 
         // set bounds
         scrollPane.setBounds(0,mainPanel.getTopPanelHeight(),dayDetailPanelWidth, dayDetailPanelHeight - mainPanel.getTopPanelHeight());
-        scrollPane.setOpaque(true);
         scrollPane.getVerticalScrollBar().setUnitIncrement(25);
 
         Integer appointmentsSize = appointments.size();
@@ -122,7 +124,8 @@ public class DayDetailPanel extends JPanel {
             for (Integer i = 0; i < appointments.size(); i++) {
                 JPanel appointmentPanel = new JPanel();
                 appointmentPanel.setLayout(new BoxLayout(appointmentPanel, BoxLayout.Y_AXIS));
-                appointmentPanel.setBorder(new EmptyBorder(12, 12, 12, 12));
+                appointmentPanel.setBorder(new EmptyBorder(10, 12, 10, 12));
+                appointmentPanel.setOpaque(false);
                 Appointment appointment = appointments.get(i);
 
                 Boolean hasLocation = true;
@@ -140,21 +143,26 @@ public class DayDetailPanel extends JPanel {
                 String endTime = appointment.endTime.toString();
                 endTime = endTime.substring(0, endTime.length() - 3);
 
+                Border labelBorder = new EmptyBorder(2,0,2,0);
+
                 JLabel time = new JLabel(startTime+" - "+endTime);
                 time.setFont(new Font("Arial", Font.PLAIN, 16));
                 time.setBorder(new EmptyBorder(0,0,10,0));
-                time.setForeground(Color.decode("#909090"));
+                time.setForeground(Color.decode("#333333"));
                 JLabel title = new JLabel("Name: "+appointment.title);
+                title.setBorder(labelBorder);
                 title.setFont(new Font("Arial", Font.PLAIN, 14));
                 JLabel location = new JLabel("Location: "+appointment.location);
+                location.setBorder(labelBorder);
                 location.setFont(new Font("Arial", Font.PLAIN, 14));
                 JLabel description = new JLabel("Notes: "+appointment.description);
+                description.setBorder(labelBorder);
                 description.setFont(new Font("Arial", Font.PLAIN, 14));
 
                 // delete button
                 JButton deleteButton = new JButton("Delete");
                 deleteButton.addActionListener(new deleteAppointmentHandler(appointment.appointmentId, appointment.title));
-                deleteButton.setMargin(new Insets(7, 33, 7, 33));
+                deleteButton.setMargin(new Insets(6, 32, 6, 32));
 
                 appointmentPanel.add(time);
                 appointmentPanel.add(title);
@@ -164,16 +172,17 @@ public class DayDetailPanel extends JPanel {
                 if (hasDescription) {
                     appointmentPanel.add(description);
                 }
-                appointmentPanel.add(new JLabel(" ")); // some spacing
+                appointmentPanel.add(new JLabel(" "));
                 appointmentPanel.add(deleteButton);
 
                 appointmentsPanel.add(appointmentPanel);
+                //appointmentsPanel.add(new JSeparator());
             }
         }
         else {
             JLabel noResultsLabel = new JLabel("No events found");
             noResultsLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-            noResultsLabel.setBorder(new EmptyBorder(12, 12, 12, 12));
+            noResultsLabel.setBorder(new EmptyBorder(10, 12, 10, 12));
             appointmentsPanel.add(noResultsLabel);
         }
 
