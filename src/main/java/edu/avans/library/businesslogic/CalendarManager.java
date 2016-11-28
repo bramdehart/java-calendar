@@ -14,7 +14,6 @@ import java.util.Date;
  */
 public class CalendarManager {
     private AppointmentDAO appointment = new AppointmentDAO();
-    private CategoryDAO category = new CategoryDAO();
 
     /**
      * Gets all appointments of a given date.

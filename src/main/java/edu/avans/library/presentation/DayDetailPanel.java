@@ -115,7 +115,7 @@ public class DayDetailPanel extends JPanel {
 
         scrollPane = new JScrollPane(appointmentsPanel);
         scrollPane.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.decode("#E2E2E2")));
-
+        scrollPane.setOpaque(true);
         // set bounds
         scrollPane.setBounds(0,mainPanel.getTopPanelHeight(),dayDetailPanelWidth, dayDetailPanelHeight - mainPanel.getTopPanelHeight());
         scrollPane.getVerticalScrollBar().setUnitIncrement(25);
@@ -124,10 +124,6 @@ public class DayDetailPanel extends JPanel {
 
         if(appointmentsSize > 0) {
             for (Integer i = 0; i < appointments.size(); i++) {
-                JPanel appointmentPanel = new JPanel();
-                appointmentPanel.setLayout(new BoxLayout(appointmentPanel, BoxLayout.Y_AXIS));
-                appointmentPanel.setBorder(new EmptyBorder(10, 12, 10, 12));
-                appointmentPanel.setOpaque(false);
                 Appointment appointment = appointments.get(i);
 
                 Boolean hasLocation = true;
@@ -139,45 +135,41 @@ public class DayDetailPanel extends JPanel {
                     hasDescription = false;
                 }
 
-                // format times
+                // components
+                Border spacingBorder = new EmptyBorder(0, 6, 0, 6);
                 String startTime = appointment.startTime.toString();
                 startTime = startTime.substring(0, startTime.length() - 3);
                 String endTime = appointment.endTime.toString();
                 endTime = endTime.substring(0, endTime.length() - 3);
-
-                Border labelBorder = new EmptyBorder(2,0,2,0);
                 JLabel time = new JLabel(startTime+" - "+endTime);
-                time.setFont(new Font("Arial", Font.PLAIN, 16));
-                time.setBorder(new EmptyBorder(0,0,10,0));
-                time.setForeground(Color.decode("#333333"));
-                JLabel title = new JLabel("Name: "+appointment.title);
-                title.setBorder(labelBorder);
-                title.setFont(new Font("Arial", Font.PLAIN, 14));
-                JLabel location = new JLabel("Location: "+appointment.location);
-                location.setBorder(labelBorder);
-                location.setFont(new Font("Arial", Font.PLAIN, 14));
-                JLabel description = new JLabel("Notes: "+appointment.description);
-                description.setBorder(labelBorder);
-                description.setFont(new Font("Arial", Font.PLAIN, 14));
+                time.setBorder(spacingBorder);
+                JLabel title = new JLabel(appointment.title);
+                title.setBorder(spacingBorder);
+                title.setFont(new Font("Arial", Font.BOLD, 14));
 
-                // delete button
                 JButton deleteButton = new JButton("Delete");
                 deleteButton.addActionListener(new deleteAppointmentHandler(appointment.appointmentId, appointment.title));
-                deleteButton.setMargin(new Insets(6, 32, 6, 32));
 
-                appointmentPanel.add(time);
+                // create panel and add components
+                JPanel appointmentPanel = new JPanel();
+                appointmentPanel.setLayout(new BoxLayout(appointmentPanel, BoxLayout.Y_AXIS));
                 appointmentPanel.add(title);
+                appointmentPanel.add(time);
                 if (hasLocation) {
+                    JLabel location = new JLabel("Location: "+appointment.location);
+                    location.setBorder(spacingBorder);
                     appointmentPanel.add(location);
                 }
                 if (hasDescription) {
+                    JLabel description = new JLabel("Notes: "+appointment.description);
+                    description.setBorder(spacingBorder);
                     appointmentPanel.add(description);
                 }
-                appointmentPanel.add(new JLabel(" "));
                 appointmentPanel.add(deleteButton);
 
+                appointmentPanel.setOpaque(false);
+                appointmentPanel.setBorder(new EmptyBorder(10, 12, 10, 12));
                 appointmentsPanel.add(appointmentPanel);
-                //appointmentsPanel.add(new JSeparator());
             }
         }
         else {

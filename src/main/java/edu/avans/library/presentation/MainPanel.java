@@ -26,7 +26,6 @@ public class MainPanel extends JPanel {
     public DayDetailPanel dayDetailPanel;
     public MainFrame mainFrame;
     private JLabel sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel, thursdayLabel, fridayLabel, saturdayLabel, monthYearLabel;
-    private CalendarManager manager;
     public JTextField dateField;
 
     /**
@@ -34,7 +33,6 @@ public class MainPanel extends JPanel {
      * @param mainFrame is passed to have access to it's methods and variables.
      */
     public MainPanel(MainFrame mainFrame) {
-        manager = new CalendarManager();
         this.mainFrame = mainFrame;
         topPanelWidth = mainFrame.getMainFrameWidth();
         setLayout(null);

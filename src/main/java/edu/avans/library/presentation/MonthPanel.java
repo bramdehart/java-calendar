@@ -1,6 +1,5 @@
 package edu.avans.library.presentation;
 
-import edu.avans.library.businesslogic.CalendarManager;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

@@ -47,7 +47,7 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
 
         // add menubar
-        setJMenuBar(getCustomMenuBar());
+        //setJMenuBar(getCustomMenuBar());
 
         setResizable(false);
         pack();
