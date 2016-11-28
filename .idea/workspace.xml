@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="428955a9-26b9-4642-8a9c-55d910eada19" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayDetailPanel$deleteAppointmentHandler.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/businesslogic/CalendarManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/businesslogic/CalendarManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/datastorage/AppointmentDAO.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/datastorage/AppointmentDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/datastorage/DatabaseConnection.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/datastorage/DatabaseConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/domain/CCalendar.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/domain/CCalendar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/domain/CYear.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/domain/CYear.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentFrame.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel$saveAppointmentHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel$saveAppointmentHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/AppointmentPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/CalendarPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/CalendarPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayDetailPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/DayDetailPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainFrame.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$currentMonthButtonHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$currentMonthButtonHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$dateFieldHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$dateFieldHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$nextMonthButtonHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$nextMonthButtonHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$prevMonthButtonHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$prevMonthButtonHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$resizeListener.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel$resizeListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel.class" afterPath="$PROJECT_DIR$/target/classes/edu/avans/library/presentation/MainPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/businesslogic/CalendarManager.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/businesslogic/CalendarManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" afterPath="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
     </list>
     <ignored path="Java-Calendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +35,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +59,8 @@
       <file leaf-file-name="AppointmentFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="405">
+              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -232,13 +207,13 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/domain/CCalendar.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/datastorage/AppointmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/CalendarPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/businesslogic/CalendarManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayDetailPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MonthPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java" />
       </list>
     </option>
@@ -995,12 +970,12 @@
       <workItem from="1478963310167" duration="5930000" />
       <workItem from="1479844663345" duration="12802000" />
       <workItem from="1480002412014" duration="59310000" />
-      <workItem from="1480248281060" duration="17382000" />
+      <workItem from="1480248281060" duration="18079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342786000" />
+    <option name="totallyTimeSpent" value="343483000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1022,7 +997,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756758" sideWeight="0.51060444" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.4597031" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15135135" sideWeight="0.4597031" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1361,6 +1336,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/DayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -1369,20 +1354,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/avans/library/presentation/AppointmentFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="405">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding />
         </state>
       </provider>
