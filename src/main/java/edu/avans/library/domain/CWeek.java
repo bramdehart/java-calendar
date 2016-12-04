@@ -97,7 +97,7 @@ public class CWeek {
     /**
      * Returns the weeknumber based on a given date.
      * @param date the date from which its week number needs to be requested
-     * @return
+     * @return the weeknumber of the given date
      */
     public Integer getWeekNumber(Date date) {
         cal.setTime(date);

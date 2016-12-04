@@ -38,7 +38,6 @@ public class CCalendar {
      * Updates the active date by moving one month earlier.
      */
     public void toPrevMonth() {
-        day.setActiveDay(1);
         if (month.getActiveMonth() == 0) {
             // active month is januari, set new one to december
             month.setActiveMonth(11);
@@ -49,6 +48,8 @@ public class CCalendar {
             // set previous month to active month
             month.setActiveMonth(month.getPreviousMonth());
         }
+
+        day.setActiveDay(1, month.getDayCount(month.getActiveMonth(), year.getActiveYear()));
         week.setActiveWeek(week.getWeekNumber(getDate(month.getActiveMonth(), day.getActiveDay(), year.getActiveYear())));
 
         day.setPreviousDay();
@@ -65,7 +66,7 @@ public class CCalendar {
      * Updates the active date by moving to the current month.
      */
     public void toCurrentMonth() {
-        day.setActiveDay(1);
+        day.setActiveDay(1, month.getDayCount(month.getActiveMonth(), year.getActiveYear()));
         day.setPreviousDay();
         day.setNextDay();
         week.setActiveWeek(week.getCurrentWeek());
@@ -83,7 +84,6 @@ public class CCalendar {
      * Updates the active date by moving one month later.
      */
     public void toNextMonth() {
-        day.setActiveDay(1);
         if (month.getActiveMonth() == 11) {
             // active month is december, set new one to januari
             month.setActiveMonth(0);
@@ -94,6 +94,8 @@ public class CCalendar {
             // set next month to active month
             month.setActiveMonth(month.getNextMonth());
         }
+
+        day.setActiveDay(1, month.getDayCount(month.getActiveMonth(), year.getActiveYear()));
         week.setActiveWeek(week.getWeekNumber(getDate(month.getActiveMonth(), day.getActiveDay(), year.getActiveYear())));
 
         day.setPreviousDay();
@@ -114,9 +116,9 @@ public class CCalendar {
             month = 1;
         }
 
-        this.day.setActiveDay(day);
-        this.month.setActiveMonth(month-1);
         this.year.setActiveYear(year);
+        this.month.setActiveMonth(month-1); // zero based
+        this.day.setActiveDay(day, this.month.getDayCount(month-1, year));
         this.week.setActiveWeek(this.week.getWeekNumber(getDate(month, day, year)));
         this.day.setPreviousDay();
         this.day.setNextDay();

@@ -11,7 +11,7 @@ import javax.swing.*;
  */
 public class AppointmentFrame extends JFrame {
     public Integer frameWidth = 292, frameHeight = 352;
-    private  AppointmentPanel appointmentPanel; // for now private
+    private AppointmentPanel appointmentPanel; // for now private
     private CalendarPanel calendarPanel;
     private Integer month, day, year;
 

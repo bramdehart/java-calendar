@@ -25,7 +25,7 @@ public class CDay {
      */
     private void setDays() {
         setCurrentDay();
-        setActiveDay(getCurrentDay());
+        setActiveDay(getCurrentDay(), null);
         setPreviousDay();
         setNextDay();
     }
@@ -65,11 +65,14 @@ public class CDay {
     /**
      * Sets the active day.
      * @param day the day that needs to be active
+     * @param monthDays the total days of the month
      */
-    public void setActiveDay(Integer day) {
+    public void setActiveDay(Integer day, Integer monthDays) {
         activeDay = day;
-        if (activeDay > 31) {
-            activeDay = 31;
+        if (monthDays != null) {
+            if (activeDay > monthDays) {
+                activeDay = monthDays;
+            }
         }
         if (activeDay < 1) {
             activeDay = 1;

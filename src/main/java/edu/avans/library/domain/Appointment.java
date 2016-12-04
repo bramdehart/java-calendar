@@ -31,5 +31,4 @@ public class Appointment {
         this.endTime = endTime;
     }
 
-
 }
