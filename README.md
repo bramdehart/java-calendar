@@ -1,8 +1,7 @@
-# Readme
+Note: For an out-of-the box functionality, appointments could better be stored in for example a JSON-file. This is a school project, for which the use of a database was required. 
 
 ## Installation
-A database import is required before using the application.<br>
-See attached sql-file.
+A database import is required before using the application. See attached sql-file.
 
 ## Description
 Java Calendar made with the Swing GUI toolkit.
