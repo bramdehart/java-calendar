@@ -18,7 +18,7 @@ import edu.avans.library.domain.Appointment;
  * @see edu.avans.library.businesslogic.CalendarManager
  */
 public class AppointmentDAO {
-    private DatabaseConnection connection = new DatabaseConnection("jdbc:mysql://127.0.0.1/javaCalendar", "root","root");
+    private DatabaseConnection connection = new DatabaseConnection("jdbc:mysql://127.0.0.1/java_calendar", "root","root");
 
     /**
      * Gets all appointments of a given date.
