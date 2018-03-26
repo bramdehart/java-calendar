@@ -1,9 +1,7 @@
-#Java Calendar made with the Swing GUI toolkit
-
-Note: For an out-of-the box functionality, appointments could better be stored in for example a JSON-file. This is a school project, for which the use of a database was required. 
+# Java Calendar made with the Swing GUI toolkit
 
 ## Installation
-A SQL-import is required before using the application. See attached SQL-file.
+An SQL-import is required before using the application. See attached SQL-file.
  
 ## Navigation
 Navigation between different monthpanels can be done in two ways:
@@ -26,5 +24,3 @@ To delete an appointment, click on "View" within the desired daypanel. The dayde
 
 ## Screenshots
 ![](http://bramdehart.nl/screenshots/Screen%20Shot%202016-12-06%20at%2022.05.06.png)
-
-![](http://bramdehart.nl/screenshots/Screen%20Shot%202016-12-06%20at%2022.03.59.png)
